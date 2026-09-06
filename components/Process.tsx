@@ -4,13 +4,65 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MagneticLink } from './Hero';
 
 const steps = [
-  { label: 'Discovery', sub: 'Call', meta: '30 min · Free', title: 'Discovery', body: 'A free 30-minute call where we learn your business, map your biggest time drains, and see where you want to go.', check: 'Clarity on where AI fits and ROI' },
-  { label: 'Strategy', sub: 'Audit', meta: '3 to 5 days · Detailed', title: 'Strategy', body: 'We audit your workflows, tools, and processes in detail to build your automation roadmap.', check: 'A custom roadmap with priorities & timelines' },
-  { label: 'Create & Build', sub: '', meta: '1 to 2 weeks · Fully managed', title: 'Create & Build', body: 'Our team builds your custom AI systems, tests every flow, and deploys everything to your live environment.', check: 'Your ideas brought to life with purpose and attention to detail.' },
-  { label: 'Launch & Grow', sub: 'Handoff', meta: 'Ongoing · Always on', title: 'Launch & Grow', body: 'We walk you through everything, document each workflow, and stay on hand for refinements.', check: 'Full ownership with expert support' },
+  {
+    step: '01',
+    label: 'Discovery',
+    sub: 'Architecture & Goals',
+    meta: '30 min · Zero cost',
+    title: 'Discovery & Bottleneck Audit',
+    body: 'A focused strategy session where we dive deep into your operational bottlenecks, understand your ideal customer profile, and quantify where custom AI and premium web architecture unlock immediate ROI.',
+    deliverables: [
+      'Comprehensive digital audit & opportunity matrix',
+      'Target ROI & efficiency projections',
+      'Recommended architecture stack (Next.js, Three.js, AI)',
+    ],
+    check: 'Complete alignment on deliverables, scope, and expected timeline',
+  },
+  {
+    step: '02',
+    label: 'Strategy',
+    sub: 'Roadmap & Specs',
+    meta: '3 to 5 days · Deep dive',
+    title: 'Strategic Architecture & Prototype',
+    body: 'We map out the exact technical blueprints, UI/UX interactive wireframes, database schemas, and AI agent prompt chains so nothing is left to chance before coding begins.',
+    deliverables: [
+      'Interactive Figma prototypes & design tokens',
+      'Technical architecture & API documentation',
+      'Milestone calendar with fixed delivery dates',
+    ],
+    check: 'Clear step-by-step roadmap with zero hidden surprises',
+  },
+  {
+    step: '03',
+    label: 'Create & Build',
+    sub: 'Rapid Engineering',
+    meta: '1 to 2 weeks · Full sprint',
+    title: 'Engineering, Animation & AI Integration',
+    body: 'Our engineers build your custom digital systems with clean, production-grade Next.js, smooth WebGL interactions, robust security, and end-to-end automated testing across devices.',
+    deliverables: [
+      'Production code repository with documentation',
+      'Interactive 3D / WebGL motion implementation',
+      'Rigorous cross-browser QA & lighthouse 95+ speed score',
+    ],
+    check: 'Flawless execution with daily progress updates via Slack or email',
+  },
+  {
+    step: '04',
+    label: 'Launch & Grow',
+    sub: 'Handoff & Scale',
+    meta: 'Ongoing · Dedicated support',
+    title: 'Deployment, Training & Continuous Evolution',
+    body: 'We deploy to your live domain, conduct team onboarding sessions, monitor real-time user metrics, and stay on standby for continuous enhancements as your traffic scales.',
+    deliverables: [
+      'Zero-downtime deployment & DNS configuration',
+      'Full video walkthrough library for your team',
+      'Ongoing maintenance, analytics monitoring & optimization',
+    ],
+    check: 'Full ownership of your assets with proactive ongoing support',
+  },
 ];
 
-const STEP_DURATION = 4000;
+const STEP_DURATION = 5000;
 
 export default function Process() {
   const [active, setActive] = useState(0);
@@ -42,88 +94,143 @@ export default function Process() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, paused]);
 
-  const goTo = (i: number) => {
-    setActive(i);
-  };
-
   return (
     <section
-      id="pricing"
-      className="py-24"
+      id="process"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mx-auto grid max-w-5xl gap-14 px-6 md:grid-cols-[0.85fr_1.6fr]">
-        <div>
-          <span className="mb-3 block text-xs font-semibold tracking-widest text-brand">PROCESS</span>
-          <h2 className="mb-3 text-[clamp(1.7rem,3.4vw,2.4rem)] font-semibold tracking-tight">Clear Process</h2>
-          <p className="mb-8 text-[14.5px] text-grey">
-            We handle the complexity of automating your business. Most clients go from
-            discovery to a fully deployed system in under 2 weeks.
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        {/* Section Heading */}
+        <div className="mx-auto mb-12 sm:mb-16 max-w-2xl text-center">
+          <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
+            THE PROCESS
+          </span>
+          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white">
+            A Transparent, Repeatable Engine
+          </h2>
+          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-grey leading-relaxed">
+            No endless meetings or opaque billable hours. We take you from initial consultation to a production-ready system in under 2 weeks.
           </p>
-
-          <div className="relative flex flex-col">
-            <div className="absolute left-[9px] top-8 z-0 h-[calc(100%-20px)] w-0.5 bg-line" />
-            {steps.map((s, i) => (
-              <button
-                key={s.label}
-                onClick={() => goTo(i)}
-                className="relative z-10 flex items-center gap-3 py-3 text-left"
-              >
-                <span
-                  className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
-                    active === i ? 'border-brand bg-brand' : 'border-line bg-white'
-                  }`}
-                >
-                  {active === i && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
-                </span>
-                <span className={`text-sm ${active === i ? 'font-semibold text-ink' : 'text-grey'}`}>
-                  {s.label} {s.sub && <span className="font-normal text-grey">· {s.sub}</span>}
-                </span>
-                <span className="ml-auto h-[3px] w-9 flex-shrink-0 overflow-hidden rounded-full bg-line">
-                  <span
-                    className="block h-full rounded-full bg-brand"
-                    style={{
-                      width: active === i ? `${progress * 100}%` : '0%',
-                      transition: active === i ? 'none' : 'width .3s',
-                    }}
-                  />
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-7">
-            <MagneticLink href="https://cal.com">Start your project →</MagneticLink>
-          </div>
-          <div className="mt-2.5 text-xs text-grey">Free 30-min consultation.</div>
         </div>
 
-        <div className="relative min-h-[260px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 14, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-              className="rounded-2xl border border-brand bg-white p-8 shadow-xl"
-            >
-              <div className="mb-4 flex items-center justify-between">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                  ◐
-                </span>
-                <span className="rounded-full bg-brand-soft px-3 py-1 text-[11px] text-grey">
-                  {steps[active].meta}
-                </span>
-              </div>
-              <h3 className="mb-2 text-[19px] font-semibold">{steps[active].title}</h3>
-              <p className="mb-4 text-sm text-grey">{steps[active].body}</p>
-              <div className="flex items-center gap-2 border-t border-dashed border-line pt-4 text-[13px] text-emerald-600">
-                ✓ {steps[active].check}
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.4fr] items-center">
+          {/* Left: Step Selector Timeline */}
+          <div className="flex flex-col gap-2.5 sm:gap-3">
+            {steps.map((s, i) => {
+              const isSelected = active === i;
+              return (
+                <button
+                  key={s.label}
+                  onClick={() => {
+                    setActive(i);
+                    setProgress(0);
+                  }}
+                  className={`group relative flex items-center justify-between rounded-2xl border p-4 sm:p-5 text-left transition-all duration-300 ${
+                    isSelected
+                      ? 'border-brand/60 bg-gradient-to-r from-[#171b26] to-[#111319] shadow-lg shadow-brand/10'
+                      : 'border-line/50 bg-[#12141a]/40 hover:border-line hover:bg-[#141720]'
+                  }`}
+                >
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <span
+                      className={`flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-xl text-xs font-bold transition-colors ${
+                        isSelected
+                          ? 'bg-brand text-white shadow-md'
+                          : 'bg-white/5 text-grey group-hover:text-white'
+                      }`}
+                    >
+                      {s.step}
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className={`text-[14px] sm:text-[15px] font-semibold ${isSelected ? 'text-white' : 'text-grey group-hover:text-white'}`}>
+                          {s.label}
+                        </span>
+                        <span className="text-[11px] sm:text-xs text-grey/60">· {s.sub}</span>
+                      </div>
+                      <span className="text-[11px] sm:text-[12px] text-brand/80">{s.meta}</span>
+                    </div>
+                  </div>
+
+                  {/* Progress Indicator */}
+                  <div className="h-1.5 w-10 sm:w-12 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-brand transition-all"
+                      style={{
+                        width: isSelected ? `${progress * 100}%` : '0%',
+                        transition: isSelected ? 'none' : 'width .3s ease',
+                      }}
+                    />
+                  </div>
+                </button>
+              );
+            })}
+
+            <div className="mt-6 flex flex-col gap-2">
+              <MagneticLink href="https://cal.com">Book Your 30-Min Strategy Call →</MagneticLink>
+              <span className="text-[11.5px] sm:text-xs text-grey/70 text-center">Zero commitment · Instant calendar confirmation</span>
+            </div>
+          </div>
+
+          {/* Right: 3D Flip Card Container */}
+          <div className="relative min-h-[380px] sm:min-h-[420px] md:min-h-[450px]" style={{ perspective: 1200 }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, rotateY: 35, y: 15, scale: 0.96 }}
+                animate={{ opacity: 1, rotateY: 0, y: 0, scale: 1 }}
+                exit={{ opacity: 0, rotateY: -35, y: -15, scale: 0.96 }}
+                transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+                style={{ transformStyle: 'preserve-3d' }}
+                className="relative flex flex-col justify-between rounded-3xl border border-brand/40 bg-gradient-to-br from-[#161a26] via-[#12141c] to-[#0d0f14] p-6 sm:p-8 md:p-10 shadow-2xl"
+              >
+                {/* Ambient glow in card corner */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand/20 blur-[70px]" />
+
+                <div>
+                  <div className="mb-6 flex items-center justify-between">
+                    <span className="rounded-full border border-brand/30 bg-brand/15 px-3.5 py-1 text-xs font-semibold text-brand">
+                      PHASE {steps[active].step}
+                    </span>
+                    <span className="rounded-full bg-white/5 px-3.5 py-1 text-xs font-medium text-white/70">
+                      {steps[active].meta}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+                    {steps[active].title}
+                  </h3>
+
+                  <p className="mt-4 text-[15px] leading-relaxed text-grey">
+                    {steps[active].body}
+                  </p>
+
+                  {/* Deliverables List */}
+                  <div className="mt-6 space-y-2.5 rounded-2xl border border-line/40 bg-black/20 p-5">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-grey/80">
+                      Key Deliverables:
+                    </h4>
+                    {steps[active].deliverables.map((d) => (
+                      <div key={d} className="flex items-start gap-2.5 text-xs text-white/90">
+                        <span className="mt-0.5 text-brand">✦</span>
+                        <span>{d}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Outcome Badge */}
+                <div className="mt-8 flex items-center gap-2 border-t border-line/50 pt-5 text-xs font-semibold text-emerald-400">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                    ✓
+                  </span>
+                  <span>{steps[active].check}</span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

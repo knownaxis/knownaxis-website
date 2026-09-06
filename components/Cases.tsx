@@ -3,84 +3,146 @@ import { motion } from 'framer-motion';
 
 const cases = [
   {
-    name: 'HOMEWISE',
-    tag: 'REAL ESTATE · UI/UX',
-    badge: 'SERVICES',
-    challenge: 'First-time home buyers often face too much information, complicated decisions, and little guidance when comparing properties.',
-    built: 'A clean real-estate experience that helps users discover verified properties, compare options, understand the buying process, and move forward with confidence.',
+    name: 'Homewise Realty',
+    client: 'Residential & Commercial Real Estate Group',
+    tag: 'REAL ESTATE · NEXT.JS · UI/UX',
+    badge: 'FEATURED CASE',
+    stats: [
+      { label: 'Inbound Inquiries', value: '+310%' },
+      { label: 'Time on Platform', value: '4.2 min' },
+      { label: 'MVP Delivery', value: '14 Days' },
+    ],
+    challenge:
+      'First-time homebuyers faced overwhelming technical jargon, fragmented listings, and zero guided journey, resulting in an 82% bounce rate on property pages.',
+    built:
+      'Engineered an interactive property discovery platform with verified neighborhood data, instant mortgage calculators, and a frictionless booking funnel.',
     href: 'https://knownaxis.framer.website/case-studies/ecommerce-order-automation',
+    color: 'from-blue-500/20 to-indigo-500/10',
   },
   {
-    name: 'Rohan K.',
-    tag: 'Head of Growth, Clearpath SaaS',
-    badge: 'SAAS',
-    challenge: 'SDRs spending 3 hours daily manually reviewing form fills, scoring leads on gut feel, and routing them to the wrong reps.',
-    built: 'A clean real-estate experience that helps users discover verified properties, compare options, understand the buying process, and move forward with confidence.',
+    name: 'Clearpath SaaS',
+    client: 'B2B Enterprise Workflow Solutions',
+    tag: 'AI WORKFLOWS · AUTOMATION · CRM',
+    badge: 'SAAS AUTOMATION',
+    stats: [
+      { label: 'Hours Saved / Wk', value: '28 hrs' },
+      { label: 'Lead Triage SLA', value: '< 90 sec' },
+      { label: 'Qualified Pipeline', value: '3.4x' },
+    ],
+    challenge:
+      'Account executives and SDRs were losing 3 hours daily manually scoring inbound form submissions, copying data across spreadsheets, and misrouting enterprise leads.',
+    built:
+      'Deployed an autonomous AI qualification agent that instantly enriches lead company data, computes propensity scores, and schedules calls with the right rep.',
     href: 'https://knownaxis.framer.website/case-studies/saas-lead-qualification',
+    color: 'from-indigo-500/20 to-purple-500/10',
   },
 ];
 
 export default function Cases() {
   return (
-    <section id="cases" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        {cases.map((c, i) => (
-          <motion.div
-            key={c.name}
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="mb-5 rounded-3xl border border-line bg-white p-8 transition-shadow hover:shadow-xl"
-          >
-            <div className="mb-5 flex items-start justify-between">
-              <div>
-                <h3 className="text-base font-semibold">{c.name}</h3>
-                <span className="text-xs text-grey">{c.tag}</span>
-              </div>
-              <span className="rounded-full bg-brand-soft px-3 py-1 text-[11px] font-semibold text-brand">
-                {c.badge}
-              </span>
-            </div>
-            <div className="mb-5 grid gap-5 sm:grid-cols-2">
-              <div>
-                <h5 className="mb-1.5 text-xs uppercase tracking-wide text-grey">Challenge</h5>
-                <p className="text-[13.5px]">{c.challenge}</p>
-              </div>
-              <div>
-                <h5 className="mb-1.5 text-xs uppercase tracking-wide text-grey">What we built</h5>
-                <p className="text-[13.5px]">{c.built}</p>
-              </div>
-            </div>
-            <div className="relative mb-5 h-44 overflow-hidden rounded-xl bg-gradient-to-br from-brand-soft to-neutral-100">
-              <motion.div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(120deg, transparent 30%, rgba(255,255,255,.5) 50%, transparent 70%)',
-                }}
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            </div>
-            <a
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-1.5 rounded-full border border-line py-3 text-[13.5px] font-medium transition-colors hover:bg-ink hover:text-white hover:border-ink"
-            >
-              Read the Full Case Study ↗
-            </a>
-          </motion.div>
-        ))}
+    <section id="work" className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        {/* Section Heading */}
+        <div className="mx-auto mb-12 sm:mb-16 max-w-2xl text-center">
+          <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
+            FEATURED PORTFOLIO
+          </span>
+          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white">
+            Explore Our Work
+          </h2>
+          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-grey leading-relaxed">
+            Real websites, interactive 3D platforms, and automated workflows engineered by Knownaxis. Experience the live interactive demos below.
+          </p>
+        </div>
 
-        <div className="mt-8 flex justify-center">
+        {/* Case Cards with 3D Tilt */}
+        <div className="space-y-8 sm:space-y-10" style={{ perspective: 1200 }}>
+          {cases.map((c, i) => (
+            <motion.div
+              key={c.name}
+              initial={{ opacity: 0, y: 40, rotateX: 12 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+              whileHover={{
+                y: -6,
+                rotateX: 2,
+                rotateY: -2,
+                boxShadow: '0 25px 50px -15px rgba(67, 97, 238, 0.2)',
+              }}
+              style={{ transformStyle: 'preserve-3d' }}
+              className="group relative rounded-3xl border border-line/70 bg-gradient-to-b from-[#151822] to-[#0f1117] p-5 sm:p-8 md:p-10 transition-all duration-300 hover:border-brand/60"
+            >
+              {/* Top ambient highlight */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="mb-6 sm:mb-8 flex flex-wrap items-start justify-between gap-3 sm:gap-4">
+                <div>
+                  <span className="text-xs font-medium tracking-wider text-brand">
+                    {c.tag}
+                  </span>
+                  <h3 className="mt-1 text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                    {c.name}
+                  </h3>
+                  <p className="text-xs text-grey/80">{c.client}</p>
+                </div>
+                <span className="rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-[11px] sm:text-xs font-semibold text-brand">
+                  {c.badge}
+                </span>
+              </div>
+
+              {/* Metrics Strip */}
+              <div className="mb-6 sm:mb-8 grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl border border-line/60 bg-black/30 p-3 sm:p-4 md:p-5">
+                {c.stats.map((s) => (
+                  <div key={s.label} className="text-center p-1">
+                    <span className="block text-base sm:text-xl md:text-2xl font-extrabold tracking-tight text-white">
+                      {s.value}
+                    </span>
+                    <span className="mt-0.5 block text-[10px] sm:text-[11px] font-medium text-grey/80">
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Challenge vs Solution Breakdown */}
+              <div className="mb-6 sm:mb-8 grid gap-4 sm:gap-6 sm:grid-cols-2">
+                <div className="rounded-2xl border border-line/40 bg-[#12141a]/60 p-4 sm:p-5">
+                  <h5 className="mb-1.5 sm:mb-2 text-xs font-semibold uppercase tracking-wider text-rose-400">
+                    The Challenge
+                  </h5>
+                  <p className="text-[13px] sm:text-[13.5px] leading-relaxed text-grey">{c.challenge}</p>
+                </div>
+                <div className="rounded-2xl border border-line/40 bg-[#12141a]/60 p-4 sm:p-5">
+                  <h5 className="mb-1.5 sm:mb-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                    The Solution & Build
+                  </h5>
+                  <p className="text-[13px] sm:text-[13.5px] leading-relaxed text-grey">{c.built}</p>
+                </div>
+              </div>
+
+              {/* CTA Link */}
+              <a
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line/70 bg-white/5 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:border-brand hover:bg-brand hover:text-white"
+              >
+                <span>Experience Live Demo</span>
+                <span>↗</span>
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA to /work */}
+        <div className="mt-12 flex justify-center">
           <a
-            href="https://knownaxis.framer.website/case-studies"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-ink px-7 py-3.5 text-[14px] font-medium text-white transition-transform hover:-translate-y-0.5"
+            href="/work"
+            className="group flex items-center gap-2 rounded-full border border-brand/50 bg-brand/15 px-8 py-4 text-[14.5px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-brand hover:border-brand shadow-lg"
           >
-            View All Case Studies ↗
+            <span>Explore All Projects & Live Demos</span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
       </div>
