@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
+import KnownaxisLogo from './KnownaxisLogo';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,9 +27,12 @@ export default function Header() {
     >
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Brand Logo */}
-        <a href="/" className="flex items-center gap-2 text-sm sm:text-base font-bold text-slate-900 dark:text-white tracking-wide">
-          <span className="h-2.5 w-2.5 rounded-sm bg-brand shadow-sm shadow-brand" />
-          KNOWNAXIS
+        <a
+          href="/"
+          aria-label="Knownaxis Home"
+          className="flex items-center text-slate-900 dark:text-white hover:opacity-90 transition-opacity"
+        >
+          <KnownaxisLogo className="h-5 sm:h-6 w-auto" />
         </a>
 
         {/* Desktop Nav Links */}
