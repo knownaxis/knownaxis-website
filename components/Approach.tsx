@@ -91,7 +91,7 @@ const solutions = [
 
 export default function Approach() {
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40">
+    <section className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
       {/* Background ambient gradient glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -z-10 h-72 w-full max-w-7xl bg-brand/10 blur-[120px]" />
 
@@ -102,14 +102,14 @@ export default function Approach() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-14 sm:mb-20 grid grid-cols-2 gap-3 sm:gap-4 rounded-3xl border border-line/60 bg-[#12141a]/80 p-4 sm:p-6 backdrop-blur-xl md:grid-cols-4 md:p-8"
+          className="mb-14 sm:mb-20 grid grid-cols-2 gap-3 sm:gap-4 rounded-3xl border border-slate-200 dark:border-line/60 bg-white/90 dark:bg-[#12141a]/80 p-4 sm:p-6 backdrop-blur-xl shadow-sm dark:shadow-none md:grid-cols-4 md:p-8"
         >
           {metrics.map((m, i) => (
-            <div key={m.label} className={`flex flex-col items-center text-center p-2 ${i !== metrics.length - 1 ? 'md:border-r md:border-line/40' : ''}`}>
-              <span className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight bg-gradient-to-r from-white via-indigo-100 to-brand bg-clip-text text-transparent">
+            <div key={m.label} className={`flex flex-col items-center text-center p-2 ${i !== metrics.length - 1 ? 'md:border-r md:border-slate-200 dark:md:border-line/40' : ''}`}>
+              <span className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight bg-gradient-to-r from-slate-900 via-indigo-600 to-brand dark:from-white dark:via-indigo-100 dark:to-brand bg-clip-text text-transparent">
                 {m.value}
               </span>
-              <span className="mt-1 text-[11px] sm:text-xs font-medium text-grey/80">{m.label}</span>
+              <span className="mt-1 text-[11px] sm:text-xs font-medium text-slate-600 dark:text-grey/80">{m.label}</span>
             </div>
           ))}
         </motion.div>
@@ -125,10 +125,10 @@ export default function Approach() {
           <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
             OUR APPROACH
           </span>
-          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white">
+          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-slate-900 dark:text-white">
             From Being Seen to Being Known
           </h2>
-          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-grey leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-slate-600 dark:text-grey leading-relaxed">
             Your brand shouldn&apos;t just exist in the background. We replace fragmented guesswork with an engineered digital system built for recognition, conversion, and enduring trust.
           </p>
         </motion.div>
@@ -137,7 +137,7 @@ export default function Approach() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.35fr] items-start">
           {/* Left Column: The Friction Points */}
           <div className="flex flex-col gap-3 sm:gap-4">
-            <h3 className="mb-1 sm:mb-2 text-xs font-semibold uppercase tracking-widest text-grey/70">
+            <h3 className="mb-1 sm:mb-2 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-grey/70">
               The Common Bottlenecks
             </h3>
             {pains.map((p, i) => (
@@ -148,16 +148,16 @@ export default function Approach() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ x: 6 }}
-                className="group flex gap-3.5 sm:gap-4 rounded-2xl border border-line/50 bg-[#12141a]/60 p-3.5 sm:p-4 transition-all duration-300 hover:border-brand/40 hover:bg-[#151821]"
+                className="group flex gap-3.5 sm:gap-4 rounded-2xl border border-slate-200 dark:border-line/50 bg-slate-50 dark:bg-[#12141a]/60 p-3.5 sm:p-4 transition-all duration-300 hover:border-brand/40 hover:bg-slate-100 dark:hover:bg-[#151821]"
               >
                 <span className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
                   {p.icon}
                 </span>
                 <div>
-                  <h4 className="text-[13.5px] sm:text-[14.5px] font-semibold text-white/90 group-hover:text-white">
+                  <h4 className="text-[13.5px] sm:text-[14.5px] font-semibold text-slate-900 dark:text-white/90 group-hover:text-brand dark:group-hover:text-white">
                     {p.title}
                   </h4>
-                  <p className="mt-0.5 text-[12.5px] sm:text-[13px] text-grey leading-snug">{p.body}</p>
+                  <p className="mt-0.5 text-[12.5px] sm:text-[13px] text-slate-600 dark:text-grey leading-snug">{p.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -184,7 +184,7 @@ export default function Approach() {
                     boxShadow: '0 20px 40px -15px rgba(67, 97, 238, 0.25)',
                   }}
                   style={{ transformStyle: 'preserve-3d' }}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-line/70 bg-gradient-to-b from-[#161922] to-[#101217] p-5 transition-all duration-300 hover:border-brand/60"
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-line/70 bg-white dark:bg-gradient-to-b dark:from-[#161922] dark:to-[#101217] p-5 shadow-sm dark:shadow-none transition-all duration-300 hover:border-brand/60"
                 >
                   {/* Subtle top edge glare on hover */}
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-brand/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -193,10 +193,10 @@ export default function Approach() {
                     <span className="inline-block rounded-md bg-brand/10 px-2.5 py-0.5 text-[10.5px] font-semibold tracking-wider text-brand">
                       {s.tag}
                     </span>
-                    <h4 className="mt-3 text-[15px] font-bold text-white group-hover:text-brand transition-colors">
+                    <h4 className="mt-3 text-[15px] font-bold text-slate-900 dark:text-white group-hover:text-brand transition-colors">
                       {s.title}
                     </h4>
-                    <p className="mt-2 text-[13px] text-grey leading-relaxed">{s.body}</p>
+                    <p className="mt-2 text-[13px] text-slate-600 dark:text-grey leading-relaxed">{s.body}</p>
                   </div>
 
                   <div className="mt-4 flex items-center gap-1 text-[11.5px] font-medium text-brand/80 group-hover:text-brand">

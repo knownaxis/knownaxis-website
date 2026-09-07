@@ -32,7 +32,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav Links */}
-        <div className="hidden gap-8 text-sm text-grey md:flex items-center font-medium">
+        <div className="hidden gap-8 text-sm text-slate-600 dark:text-grey md:flex items-center font-medium">
           <a href="/#about" className="hover:text-brand dark:hover:text-white transition-colors">About</a>
           <a href="/#services" className="hover:text-brand dark:hover:text-white transition-colors">Services</a>
           <a href="/#process" className="hover:text-brand dark:hover:text-white transition-colors">Process</a>
@@ -69,7 +69,7 @@ export default function Header() {
             href="https://cal.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-slate-900 text-white dark:bg-white dark:text-black px-5 py-2 text-[13px] font-semibold transition-all hover:shadow-lg active:scale-95"
+            className="rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-5 py-2 text-[13px] font-semibold transition-all hover:shadow-lg active:scale-95"
           >
             Book Free Call
           </a>

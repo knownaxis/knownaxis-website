@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import ErrorBoundary from './ErrorBoundary';
 
 const HeroVisual3D = dynamic(() => import('./HeroVisual3D'), {
   ssr: false,
@@ -25,11 +26,13 @@ export default function Hero() {
     <section className="relative flex min-h-[92vh] sm:min-h-screen w-full items-center justify-center overflow-hidden px-5 sm:px-6 pt-28 sm:pt-32 pb-16">
       {/* Full-bleed 3D Art covering the entire hero page */}
       <div className="absolute inset-0 z-0 h-full w-full">
-        <HeroVisual3D />
+        <ErrorBoundary>
+          <HeroVisual3D />
+        </ErrorBoundary>
       </div>
 
       {/* Subtle radial depth overlay for high text legibility */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(11,12,16,0.3)_0%,rgba(11,12,16,0.85)_85%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.45)_0%,rgba(248,249,252,0.9)_80%)] dark:bg-[radial-gradient(circle_at_center,rgba(11,12,16,0.3)_0%,rgba(11,12,16,0.85)_85%)]" />
 
       {/* Centered Hero Content */}
       <div className="pointer-events-none relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
@@ -43,25 +46,25 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="text-[clamp(2.1rem,6.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-md"
+            className="text-[clamp(2.1rem,6.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-tight text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-md"
           >
             Make your website
             <br />
-            <span className="bg-gradient-to-r from-white via-indigo-100 to-brand bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-slate-900 via-indigo-600 to-brand dark:from-white dark:via-indigo-100 dark:to-brand bg-clip-text text-transparent">
               Known to your customers.
             </span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-5 sm:mt-6 max-w-xl text-[14.5px] sm:text-[16px] md:text-[18px] leading-relaxed text-grey/90"
+            className="mt-5 sm:mt-6 max-w-xl text-[14.5px] sm:text-[16px] md:text-[18px] leading-relaxed text-slate-700 dark:text-grey/90"
           >
             Let your customers recognize your brand at every digital touchpoint. With Knownaxis, we help you build a distinctive digital identity that people remember, trust, and connect with.
           </motion.p>
 
           <motion.p
             variants={item}
-            className="mt-2.5 sm:mt-3 max-w-lg text-[13px] sm:text-sm text-grey/75"
+            className="mt-2.5 sm:mt-3 max-w-lg text-[13px] sm:text-sm text-slate-600 dark:text-grey/75"
           >
             Custom AI systems and workflows designed to scale your business. Save 25+ hours every week and 3x your output.
           </motion.p>
@@ -84,7 +87,7 @@ export function MagneticLink({ href, children }: { href: string; children: React
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-      className="inline-flex items-center gap-2 rounded-full bg-brand text-white dark:bg-white dark:text-black px-8 py-4 text-[14.5px] sm:text-[15px] font-semibold shadow-xl hover:shadow-brand/25 transition-all"
+      className="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-8 py-4 text-[14.5px] sm:text-[15px] font-semibold shadow-xl hover:shadow-brand/25 transition-all"
     >
       {children}
     </motion.a>

@@ -22,71 +22,7 @@ html.dark body {
 
 html:not(.dark) body {
   background: #f8f9fc;
-  color: #111319;
-}
-
-/* Light mode overrides for high-contrast crisp readability */
-html:not(.dark) .text-white {
-  color: #111319 !important;
-}
-
-html:not(.dark) .text-white\/90,
-html:not(.dark) .text-white\/80,
-html:not(.dark) .text-white\/70 {
-  color: #242836 !important;
-}
-
-html:not(.dark) .text-grey,
-html:not(.dark) .text-grey\/90,
-html:not(.dark) .text-grey\/80,
-html:not(.dark) .text-grey\/75,
-html:not(.dark) .text-grey\/70 {
-  color: #555a6d !important;
-}
-
-html:not(.dark) .bg-\[\#060608\],
-html:not(.dark) .bg-\[\#07080b\],
-html:not(.dark) .bg-\[\#0b0c10\],
-html:not(.dark) .bg-\[\#0f1116\],
-html:not(.dark) .bg-\[\#0d0f14\] {
-  background-color: #f0f2f8 !important;
-}
-
-html:not(.dark) .bg-\[\#12141a\]\/40,
-html:not(.dark) .bg-\[\#12141a\]\/60,
-html:not(.dark) .bg-\[\#12141a\]\/80,
-html:not(.dark) .bg-\[\#14161f\],
-html:not(.dark) .bg-\[\#151822\],
-html:not(.dark) .bg-\[\#15171c\],
-html:not(.dark) .bg-\[\#161922\],
-html:not(.dark) .bg-\[\#161a25\],
-html:not(.dark) .bg-\[\#161a26\],
-html:not(.dark) .bg-\[\#171b26\] {
-  background-color: #ffffff !important;
-}
-
-html:not(.dark) .border-line,
-html:not(.dark) .border-line\/40,
-html:not(.dark) .border-line\/50,
-html:not(.dark) .border-line\/60,
-html:not(.dark) .border-line\/70 {
-  border-color: #e2e6f0 !important;
-}
-
-html:not(.dark) .bg-black\/20,
-html:not(.dark) .bg-black\/30,
-html:not(.dark) .bg-black\/40,
-html:not(.dark) .bg-black\/50 {
-  background-color: rgba(235, 239, 248, 0.75) !important;
-}
-
-html:not(.dark) .bg-white\/5,
-html:not(.dark) .bg-white\/10 {
-  background-color: rgba(67, 97, 238, 0.07) !important;
-}
-
-html:not(.dark) .border-white\/10 {
-  border-color: #e2e6f0 !important;
+  color: #0f172a;
 }
 
 @media (prefers-reduced-motion: reduce) {

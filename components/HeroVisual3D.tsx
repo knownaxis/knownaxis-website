@@ -1,50 +1,74 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+
+// Detect WebGL support safely before instantiating Three.js
+function isWebGLAvailable() {
+  try {
+    const testCanvas = document.createElement('canvas');
+    return !!(
+      typeof window !== 'undefined' &&
+      window.WebGLRenderingContext &&
+      (testCanvas.getContext('webgl2') || testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl'))
+    );
+  } catch {
+    return false;
+  }
+}
 
 export default function HeroVisual3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [useFallback, setUseFallback] = useState<boolean>(false);
 
   useEffect(() => {
+    // 0. Pre-flight check: Is WebGL available on this device/browser?
+    if (!isWebGLAvailable()) {
+      setUseFallback(true);
+      return;
+    }
+
     const container = containerRef.current;
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
 
     let animationFrameId: number;
     const clock = new THREE.Clock();
+    let renderer: THREE.WebGLRenderer | null = null;
+    let scene: THREE.Scene | null = null;
 
-    // 1. Scene setup
-    const scene = new THREE.Scene();
+    try {
+      // 1. Scene setup
+      scene = new THREE.Scene();
 
-    // 2. Camera setup
-    const width = container.clientWidth || window.innerWidth || 1200;
-    const height = container.clientHeight || window.innerHeight || 800;
-    const aspect = width / height;
-    const camera = new THREE.PerspectiveCamera(42, aspect, 0.1, 100);
-    
-    // Adaptive camera distance based on aspect ratio
-    if (aspect < 0.65) {
-      camera.position.set(0, 0, 7.8);
-    } else if (aspect < 1.0) {
-      camera.position.set(0, 0, 7.2);
-    } else {
-      camera.position.set(0, 0, 6.6);
-    }
+      // 2. Camera setup
+      const width = container.clientWidth || window.innerWidth || 1200;
+      const height = container.clientHeight || window.innerHeight || 800;
+      const aspect = width / height;
+      const camera = new THREE.PerspectiveCamera(42, aspect, 0.1, 100);
+      
+      // Adaptive camera distance based on aspect ratio
+      if (aspect < 0.65) {
+        camera.position.set(0, 0, 7.8);
+      } else if (aspect < 1.0) {
+        camera.position.set(0, 0, 7.2);
+      } else {
+        camera.position.set(0, 0, 6.6);
+      }
 
-    // 3. Renderer setup
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: true,
-      powerPreference: 'high-performance',
-    });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.35;
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
+      // 3. Renderer setup with safe context creation
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance',
+      });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.35;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     // 4. Lighting setup
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
@@ -291,7 +315,7 @@ export default function HeroVisual3D() {
         camera.position.z = 6.6;
       }
       camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
+      if (renderer) renderer.setSize(w, h);
     };
 
     const resizeObserver = new ResizeObserver(handleResize);
@@ -352,39 +376,56 @@ export default function HeroVisual3D() {
       // 7. Organic floating vertical wave
       mainGroup.position.y = Math.sin(elapsed * 1.4) * 0.12;
 
-      renderer.render(scene, camera);
+      if (renderer && scene) {
+        renderer.render(scene, camera);
+      }
     };
+
+    // 8. Safe context loss handling
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+      cancelAnimationFrame(animationFrameId);
+      setUseFallback(true);
+    };
+    canvas.addEventListener('webglcontextlost', handleContextLost, false);
 
     animate();
 
     // --- G. CLEANUP ---
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('mousemove', handleWindowMouseMove);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('touchmove', handleTouchMove);
-      resizeObserver.disconnect();
+        cancelAnimationFrame(animationFrameId);
+        window.removeEventListener('mousemove', handleWindowMouseMove);
+        container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener('touchmove', handleTouchMove);
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
+        resizeObserver.disconnect();
 
-      // Deep resource disposal
-      scene.traverse((object) => {
-        if ((object as THREE.Mesh).isMesh) {
-          const mesh = object as THREE.Mesh;
-          mesh.geometry?.dispose();
-          if (mesh.material) {
-            if (Array.isArray(mesh.material)) {
-              mesh.material.forEach((mat) => mat.dispose());
-            } else {
-              mesh.material.dispose();
+        // Deep resource disposal
+        if (scene) {
+          scene.traverse((object) => {
+            if ((object as THREE.Mesh).isMesh) {
+              const mesh = object as THREE.Mesh;
+              mesh.geometry?.dispose();
+              if (mesh.material) {
+                if (Array.isArray(mesh.material)) {
+                  mesh.material.forEach((mat) => mat.dispose());
+                } else {
+                  mesh.material.dispose();
+                }
+              }
             }
-          }
+          });
         }
-      });
 
-      particleGeometry.dispose();
-      particleMaterial.dispose();
-      particleTexture.dispose();
-      renderer.dispose();
-    };
+        particleGeometry.dispose();
+        particleMaterial.dispose();
+        particleTexture.dispose();
+        renderer?.dispose();
+      };
+    } catch (err) {
+      console.warn('WebGL initialization failed, falling back to CSS 3D art:', err);
+      setUseFallback(true);
+    }
   }, []);
 
   return (
@@ -399,12 +440,57 @@ export default function HeroVisual3D() {
         <div className="absolute h-[280px] w-[280px] rounded-full bg-[#a855f7]/15 blur-[100px]" />
       </div>
 
-      {/* WebGL Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="h-full w-full cursor-pointer"
-        style={{ touchAction: 'pan-y' }}
-      />
+      {useFallback ? (
+        /* Pure CSS Gyroscopic Visual Fallback for devices without GPU / WebGL */
+        <div className="relative flex h-full w-full items-center justify-center pointer-events-none" style={{ perspective: 1000 }}>
+          <div className="relative flex h-64 w-64 sm:h-80 sm:w-80 items-center justify-center">
+            {/* Outer Orbital Ring */}
+            <div
+              className="absolute inset-0 rounded-full border-2 border-indigo-500/30 shadow-[0_0_25px_rgba(99,102,241,0.25)]"
+              style={{
+                transform: 'rotateX(60deg) rotateY(20deg)',
+                animation: 'spin 18s linear infinite',
+              }}
+            />
+            {/* Middle Orbital Ring */}
+            <div
+              className="absolute inset-4 rounded-full border-2 border-cyan-400/40 shadow-[0_0_20px_rgba(0,245,255,0.3)]"
+              style={{
+                transform: 'rotateX(40deg) rotateY(70deg)',
+                animation: 'spin 12s linear infinite reverse',
+              }}
+            />
+            {/* Inner Orbital Ring */}
+            <div
+              className="absolute inset-8 rounded-full border-2 border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+              style={{
+                transform: 'rotateX(75deg) rotateY(-30deg)',
+                animation: 'spin 8s linear infinite',
+              }}
+            />
+            {/* Central Glowing Core Jewel */}
+            <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-tr from-brand via-cyan-400 to-purple-500 p-[2px] shadow-2xl shadow-brand/40 animate-pulse">
+              <div className="flex h-full w-full items-center justify-center rounded-3xl bg-[#0b0c10]/80 backdrop-blur-md">
+                <div className="h-6 w-6 rotate-45 rounded-lg bg-gradient-to-tr from-brand to-cyan-300 shadow-lg shadow-cyan-400/50" />
+              </div>
+            </div>
+            {/* Orbiting Satellite Light Beacons */}
+            <div
+              className="absolute h-full w-full"
+              style={{ animation: 'spin 10s linear infinite' }}
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#00f5ff]" />
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* WebGL Three.js Interactive Canvas */
+        <canvas
+          ref={canvasRef}
+          className="h-full w-full cursor-pointer"
+          style={{ touchAction: 'pan-y' }}
+        />
+      )}
     </div>
   );
 }

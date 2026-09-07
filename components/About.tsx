@@ -45,7 +45,7 @@ const principles = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40">
+    <section id="about" className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 -z-10 h-96 w-96 rounded-full bg-brand/10 blur-[130px]" />
 
@@ -55,10 +55,10 @@ export default function About() {
           <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
             ABOUT KNOWNAXIS
           </span>
-          <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
             We architect memorable digital identities and autonomous AI systems that drive real growth.
           </h2>
-          <p className="mt-4 text-[15px] sm:text-[16.5px] leading-relaxed text-grey">
+          <p className="mt-4 text-[15px] sm:text-[16.5px] leading-relaxed text-slate-600 dark:text-grey">
             Knownaxis was founded to bridge the gap between creative visual artistry and rigorous full-stack software engineering. We partner with forward-thinking businesses to transform how customers discover, remember, and convert on their websites.
           </p>
         </div>
@@ -79,33 +79,33 @@ export default function About() {
                 boxShadow: '0 20px 40px -15px rgba(67, 97, 238, 0.2)',
               }}
               style={{ transformStyle: 'preserve-3d' }}
-              className="group relative flex flex-col justify-between rounded-3xl border border-line/70 bg-gradient-to-b from-[#151822] to-[#0f1117] p-7 sm:p-8 transition-all duration-300 hover:border-brand/60"
+              className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-line/70 bg-white dark:bg-gradient-to-b dark:from-[#151822] dark:to-[#0f1117] p-7 sm:p-8 shadow-sm dark:shadow-none transition-all duration-300 hover:border-brand/60"
             >
               <div>
                 <div className="mb-6 flex items-center justify-between">
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/15 text-brand shadow-inner group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-300">
                     {p.icon}
                   </span>
-                  <span className="text-xs font-bold text-grey/60 font-mono">
+                  <span className="text-xs font-bold text-slate-400 dark:text-grey/60 font-mono">
                     {p.number}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-brand transition-colors">
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-brand transition-colors">
                   {p.title}
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-relaxed text-grey">
+                <p className="mt-3 text-[14px] leading-relaxed text-slate-600 dark:text-grey">
                   {p.desc}
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-line/50 pt-5">
+              <div className="mt-8 border-t border-slate-200 dark:border-line/50 pt-5">
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg border border-line/60 bg-[#191c25]/80 px-2.5 py-1 text-[11px] font-medium text-white/70"
+                      className="rounded-lg border border-slate-200 dark:border-line/60 bg-slate-100 dark:bg-[#191c25]/80 px-2.5 py-1 text-[11px] font-medium text-slate-700 dark:text-white/70"
                     >
                       {tag}
                     </span>
@@ -117,15 +117,15 @@ export default function About() {
         </div>
 
         {/* Operating Guarantees Strip */}
-        <div className="rounded-3xl border border-line/70 bg-[#12141a]/60 p-6 sm:p-8">
+        <div className="rounded-3xl border border-slate-200 dark:border-line/70 bg-white dark:bg-[#12141a]/60 p-6 sm:p-8 shadow-sm dark:shadow-none">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {principles.map((pr, idx) => (
-              <div key={pr.label} className={`flex flex-col gap-1.5 ${idx !== principles.length - 1 ? 'md:border-r md:border-line/40 md:pr-6' : ''}`}>
+              <div key={pr.label} className={`flex flex-col gap-1.5 ${idx !== principles.length - 1 ? 'md:border-r md:border-slate-200 dark:md:border-line/40 md:pr-6' : ''}`}>
                 <div className="flex items-center gap-2 text-brand font-semibold text-sm">
                   <span>✓</span>
                   <span>{pr.label}</span>
                 </div>
-                <p className="text-xs text-grey leading-relaxed">{pr.detail}</p>
+                <p className="text-xs text-slate-600 dark:text-grey leading-relaxed">{pr.detail}</p>
               </div>
             ))}
           </div>

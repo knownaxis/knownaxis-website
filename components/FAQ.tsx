@@ -29,7 +29,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0); // first open by default
 
   return (
-    <section id="faq" className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40">
+    <section id="faq" className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.35fr] items-start">
           {/* Left Column */}
@@ -37,17 +37,17 @@ export default function FAQ() {
             <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
               COMMON QUESTIONS
             </span>
-            <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white">
+            <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-slate-900 dark:text-white">
               Everything You Need to Know
             </h2>
-            <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-grey">
+            <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-slate-600 dark:text-grey">
               Clear answers to help you make an informed decision. If you have a specific requirement or architecture question, we are just a message away.
             </p>
 
             {/* Support Callout Box */}
-            <div className="mt-6 sm:mt-8 rounded-2xl border border-line/60 bg-[#14161f] p-5 sm:p-6">
-              <h4 className="text-sm font-semibold text-white">Have a custom question?</h4>
-              <p className="mt-1.5 text-xs text-grey">
+            <div className="mt-6 sm:mt-8 rounded-2xl border border-slate-200 dark:border-line/60 bg-white dark:bg-[#14161f] p-5 sm:p-6 shadow-sm dark:shadow-none">
+              <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Have a custom question?</h4>
+              <p className="mt-1.5 text-xs text-slate-600 dark:text-grey">
                 Speak directly with an engineer to assess your stack and goals.
               </p>
               <a
@@ -75,21 +75,21 @@ export default function FAQ() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   className={`rounded-2xl border transition-all duration-300 ${
                     isOpen
-                      ? 'border-brand/60 bg-gradient-to-b from-[#161a25] to-[#10121a] shadow-lg shadow-brand/5'
-                      : 'border-line/60 bg-[#12141a]/60 hover:border-line hover:bg-[#14161f]'
+                      ? 'border-brand/60 bg-white dark:bg-gradient-to-b dark:from-[#161a25] dark:to-[#10121a] shadow-md dark:shadow-brand/5'
+                      : 'border-slate-200 dark:border-line/60 bg-white dark:bg-[#12141a]/60 hover:border-slate-300 dark:hover:border-line hover:bg-slate-50 dark:hover:bg-[#14161f]'
                   }`}
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="flex w-full items-center justify-between p-4 sm:p-6 text-left"
                   >
-                    <span className={`text-[14.5px] sm:text-[15.5px] font-semibold transition-colors ${isOpen ? 'text-white' : 'text-white/80'}`}>
+                    <span className={`text-[14.5px] sm:text-[15.5px] font-semibold transition-colors ${isOpen ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-white/80'}`}>
                       {f.q}
                     </span>
                     <span className={`ml-3 sm:ml-4 flex h-6 w-6 sm:h-7 sm:w-7 flex-shrink-0 items-center justify-center rounded-full border transition-all ${
                       isOpen
                         ? 'border-brand bg-brand text-white'
-                        : 'border-line bg-white/5 text-grey'
+                        : 'border-slate-200 dark:border-line bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-grey'
                     }`}>
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
@@ -110,8 +110,8 @@ export default function FAQ() {
                         transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="border-t border-line/40 px-4 pb-4 pt-3 sm:px-6 sm:pb-6 sm:pt-4">
-                          <p className="text-[13.5px] sm:text-[14.5px] leading-relaxed text-grey">
+                        <div className="border-t border-slate-200 dark:border-line/40 px-4 pb-4 pt-3 sm:px-6 sm:pb-6 sm:pt-4">
+                          <p className="text-[13.5px] sm:text-[14.5px] leading-relaxed text-slate-600 dark:text-grey">
                             {f.a}
                           </p>
                         </div>

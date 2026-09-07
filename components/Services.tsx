@@ -64,7 +64,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40">
+    <section id="services" className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
       {/* Subtle background ambient light */}
       <div className="pointer-events-none absolute right-0 top-1/3 -z-10 h-96 w-96 rounded-full bg-brand/15 blur-[120px]" />
       <div className="pointer-events-none absolute left-0 bottom-1/4 -z-10 h-80 w-80 rounded-full bg-[#00f5ff]/10 blur-[120px]" />
@@ -76,11 +76,11 @@ export default function Services() {
             <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
               OUR CAPABILITIES
             </span>
-            <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white max-w-xl">
+            <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-slate-900 dark:text-white max-w-xl">
               Everything your brand needs to scale, automate, and lead.
             </h2>
           </div>
-          <p className="max-w-md text-[14.5px] sm:text-[15.5px] leading-relaxed text-grey">
+          <p className="max-w-md text-[14.5px] sm:text-[15.5px] leading-relaxed text-slate-600 dark:text-grey">
             We integrate world-class design, modern software engineering, and intelligent AI workflows under one accountable team.
           </p>
         </div>
@@ -102,10 +102,10 @@ export default function Services() {
                 boxShadow: '0 20px 40px -15px rgba(67, 97, 238, 0.25)',
               }}
               style={{ transformStyle: 'preserve-3d' }}
-              className={`group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 md:p-8 transition-all duration-300 ${
+              className={`group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 md:p-8 shadow-sm dark:shadow-none transition-all duration-300 ${
                 s.highlight
-                  ? 'border-brand/50 bg-gradient-to-b from-[#181c28] via-[#131620] to-[#0f1117] md:col-span-1 lg:col-span-1'
-                  : 'border-line/70 bg-gradient-to-b from-[#14161f] to-[#0f1116] hover:border-brand/50'
+                  ? 'border-brand/40 dark:border-brand/50 bg-white dark:bg-gradient-to-b dark:from-[#181c28] dark:via-[#131620] dark:to-[#0f1117] md:col-span-1 lg:col-span-1 shadow-md dark:shadow-none'
+                  : 'border-slate-200 dark:border-line/70 bg-white dark:bg-gradient-to-b dark:from-[#14161f] dark:to-[#0f1116] hover:border-brand/50'
               }`}
             >
               {/* Top ambient hover line */}
@@ -116,23 +116,23 @@ export default function Services() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/15 text-brand shadow-inner group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-300">
                     {s.icon}
                   </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
+                  <span className="rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-3 py-1 text-[11px] font-semibold text-slate-700 dark:text-white/80">
                     {s.tag}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-brand transition-colors">
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-brand transition-colors">
                   {s.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-grey">{s.desc}</p>
+                <p className="mt-3 text-[14px] leading-relaxed text-slate-600 dark:text-grey">{s.desc}</p>
               </div>
 
-              <div className="mt-8 border-t border-line/50 pt-5">
+              <div className="mt-8 border-t border-slate-200 dark:border-line/50 pt-5">
                 <div className="flex flex-wrap gap-2">
                   {s.features.map((f) => (
                     <span
                       key={f}
-                      className="rounded-lg border border-line/60 bg-[#191c25]/80 px-2.5 py-1 text-[11.5px] font-medium text-white/70"
+                      className="rounded-lg border border-slate-200 dark:border-line/60 bg-slate-100 dark:bg-[#191c25]/80 px-2.5 py-1 text-[11.5px] font-medium text-slate-700 dark:text-white/70"
                     >
                       {f}
                     </span>
@@ -146,7 +146,7 @@ export default function Services() {
         {/* CTA Strip */}
         <div className="mt-14 flex flex-col items-center justify-center gap-4 text-center">
           <MagneticLink href="https://cal.com">Schedule Your Discovery Call →</MagneticLink>
-          <span className="text-xs text-grey">30-min strategy session · Zero obligation</span>
+          <span className="text-xs text-slate-500 dark:text-grey">30-min strategy session · Zero obligation</span>
         </div>
       </div>
     </section>

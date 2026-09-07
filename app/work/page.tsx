@@ -146,7 +146,7 @@ export default function WorkPage() {
             <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
               Explore Our Work
             </h1>
-            <p className="mt-4 text-[15.5px] sm:text-[17px] leading-relaxed text-grey">
+            <p className="mt-4 text-[15.5px] sm:text-[17px] leading-relaxed text-slate-600 dark:text-grey">
               Experience live interactive demos of modern websites, 3D digital experiences, and autonomous AI systems crafted by Knownaxis. Click any project to experience the live build.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function WorkPage() {
                       {project.title}
                     </h3>
 
-                    <p className="mt-3 text-[14px] leading-relaxed text-grey">
+                    <p className="mt-3 text-[14px] leading-relaxed text-slate-600 dark:text-grey">
                       {project.description}
                     </p>
 
@@ -256,7 +256,7 @@ export default function WorkPage() {
                           <span className="block text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
                             {m.value}
                           </span>
-                          <span className="mt-0.5 block text-[10px] font-medium text-grey">
+                          <span className="mt-0.5 block text-[10px] font-medium text-slate-500 dark:text-grey">
                             {m.label}
                           </span>
                         </div>
@@ -310,7 +310,7 @@ export default function WorkPage() {
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                 Your Project Featured Here
               </h3>
-              <p className="mt-2.5 max-w-sm text-sm text-grey leading-relaxed">
+              <p className="mt-2.5 max-w-sm text-sm text-slate-600 dark:text-grey leading-relaxed">
                 Ready to elevate your company with an unmistakable digital identity, interactive 3D motion, and custom AI systems?
               </p>
               <a

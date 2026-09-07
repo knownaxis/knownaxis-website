@@ -97,7 +97,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-line/40"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -107,10 +107,10 @@ export default function Process() {
           <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
             THE PROCESS
           </span>
-          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-white">
+          <h2 className="text-[clamp(1.85rem,4vw,2.8rem)] font-bold tracking-tight text-slate-900 dark:text-white">
             A Transparent, Repeatable Engine
           </h2>
-          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-grey leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-[14.5px] sm:text-[16px] text-slate-600 dark:text-grey leading-relaxed">
             No endless meetings or opaque billable hours. We take you from initial consultation to a production-ready system in under 2 weeks.
           </p>
         </div>
@@ -129,8 +129,8 @@ export default function Process() {
                   }}
                   className={`group relative flex items-center justify-between rounded-2xl border p-4 sm:p-5 text-left transition-all duration-300 ${
                     isSelected
-                      ? 'border-brand/60 bg-gradient-to-r from-[#171b26] to-[#111319] shadow-lg shadow-brand/10'
-                      : 'border-line/50 bg-[#12141a]/40 hover:border-line hover:bg-[#141720]'
+                      ? 'border-brand bg-slate-100 dark:bg-gradient-to-r dark:from-[#171b26] dark:to-[#111319] shadow-sm dark:shadow-lg dark:shadow-brand/10'
+                      : 'border-slate-200 dark:border-line/50 bg-white/80 dark:bg-[#12141a]/40 hover:border-slate-300 dark:hover:border-line hover:bg-slate-50 dark:hover:bg-[#141720]'
                   }`}
                 >
                   <div className="flex items-center gap-3.5 sm:gap-4">
@@ -138,24 +138,24 @@ export default function Process() {
                       className={`flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-xl text-xs font-bold transition-colors ${
                         isSelected
                           ? 'bg-brand text-white shadow-md'
-                          : 'bg-white/5 text-grey group-hover:text-white'
+                          : 'bg-slate-100 text-slate-700 dark:bg-white/5 dark:text-grey dark:group-hover:text-white'
                       }`}
                     >
                       {s.step}
                     </span>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className={`text-[14px] sm:text-[15px] font-semibold ${isSelected ? 'text-white' : 'text-grey group-hover:text-white'}`}>
+                        <span className={`text-[14px] sm:text-[15px] font-semibold ${isSelected ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-grey group-hover:text-slate-900 dark:group-hover:text-white'}`}>
                           {s.label}
                         </span>
-                        <span className="text-[11px] sm:text-xs text-grey/60">· {s.sub}</span>
+                        <span className="text-[11px] sm:text-xs text-slate-400 dark:text-grey/60">· {s.sub}</span>
                       </div>
                       <span className="text-[11px] sm:text-[12px] text-brand/80">{s.meta}</span>
                     </div>
                   </div>
 
                   {/* Progress Indicator */}
-                  <div className="h-1.5 w-10 sm:w-12 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-1.5 w-10 sm:w-12 overflow-hidden rounded-full bg-slate-200 dark:bg-white/10">
                     <div
                       className="h-full rounded-full bg-brand transition-all"
                       style={{
@@ -170,7 +170,7 @@ export default function Process() {
 
             <div className="mt-6 flex flex-col gap-2">
               <MagneticLink href="https://cal.com">Book Your 30-Min Strategy Call →</MagneticLink>
-              <span className="text-[11.5px] sm:text-xs text-grey/70 text-center">Zero commitment · Instant calendar confirmation</span>
+              <span className="text-[11.5px] sm:text-xs text-slate-500 dark:text-grey/70 text-center">Zero commitment · Instant calendar confirmation</span>
             </div>
           </div>
 
@@ -184,7 +184,7 @@ export default function Process() {
                 exit={{ opacity: 0, rotateY: -35, y: -15, scale: 0.96 }}
                 transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
                 style={{ transformStyle: 'preserve-3d' }}
-                className="relative flex flex-col justify-between rounded-3xl border border-brand/40 bg-gradient-to-br from-[#161a26] via-[#12141c] to-[#0d0f14] p-6 sm:p-8 md:p-10 shadow-2xl"
+                className="relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-brand/40 bg-white dark:bg-gradient-to-br dark:from-[#161a26] dark:via-[#12141c] dark:to-[#0d0f14] p-6 sm:p-8 md:p-10 shadow-xl dark:shadow-2xl"
               >
                 {/* Ambient glow in card corner */}
                 <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand/20 blur-[70px]" />
@@ -194,26 +194,26 @@ export default function Process() {
                     <span className="rounded-full border border-brand/30 bg-brand/15 px-3.5 py-1 text-xs font-semibold text-brand">
                       PHASE {steps[active].step}
                     </span>
-                    <span className="rounded-full bg-white/5 px-3.5 py-1 text-xs font-medium text-white/70">
+                    <span className="rounded-full border border-slate-200 dark:border-transparent bg-slate-100 dark:bg-white/5 px-3.5 py-1 text-xs font-medium text-slate-700 dark:text-white/70">
                       {steps[active].meta}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+                  <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white md:text-3xl">
                     {steps[active].title}
                   </h3>
 
-                  <p className="mt-4 text-[15px] leading-relaxed text-grey">
+                  <p className="mt-4 text-[15px] leading-relaxed text-slate-600 dark:text-grey">
                     {steps[active].body}
                   </p>
 
                   {/* Deliverables List */}
-                  <div className="mt-6 space-y-2.5 rounded-2xl border border-line/40 bg-black/20 p-5">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-grey/80">
+                  <div className="mt-6 space-y-2.5 rounded-2xl border border-slate-200 dark:border-line/40 bg-slate-50 dark:bg-black/20 p-5">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-grey/80">
                       Key Deliverables:
                     </h4>
                     {steps[active].deliverables.map((d) => (
-                      <div key={d} className="flex items-start gap-2.5 text-xs text-white/90">
+                      <div key={d} className="flex items-start gap-2.5 text-xs text-slate-800 dark:text-white/90">
                         <span className="mt-0.5 text-brand">✦</span>
                         <span>{d}</span>
                       </div>
@@ -222,8 +222,8 @@ export default function Process() {
                 </div>
 
                 {/* Outcome Badge */}
-                <div className="mt-8 flex items-center gap-2 border-t border-line/50 pt-5 text-xs font-semibold text-emerald-400">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                <div className="mt-8 flex items-center gap-2 border-t border-slate-200 dark:border-line/50 pt-5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-300">
                     ✓
                   </span>
                   <span>{steps[active].check}</span>
