@@ -16,7 +16,7 @@ const cases = [
       'First-time homebuyers faced overwhelming technical jargon, fragmented listings, and zero guided journey, resulting in an 82% bounce rate on property pages.',
     built:
       'Engineered an interactive property discovery platform with verified neighborhood data, instant mortgage calculators, and a frictionless booking funnel.',
-    href: '/demos/homewise',
+    href: 'https://knownaxis.framer.website/case-studies/ecommerce-order-automation',
     color: 'from-blue-500/20 to-indigo-500/10',
   },
   {
@@ -33,7 +33,7 @@ const cases = [
       'Account executives and SDRs were losing 3 hours daily manually scoring inbound form submissions, copying data across spreadsheets, and misrouting enterprise leads.',
     built:
       'Deployed an autonomous AI qualification agent that instantly enriches lead company data, computes propensity scores, and schedules calls with the right rep.',
-    href: '/demos/clearpath',
+    href: 'https://knownaxis.framer.website/case-studies/saas-lead-qualification',
     color: 'from-indigo-500/20 to-purple-500/10',
   },
 ];
