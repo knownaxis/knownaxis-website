@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBANisty — Modern Streetwear &amp; Apparel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+<!-- Glassmorphic Navigation -->
+<header id="site-header"></header>
+
+<!-- ===== CINEMATIC HERO SECTION (Full-Bleed Luxury Video Campaign) ===== -->
+<section class="hero-cinematic" id="hero-section">
+  <!-- Background Video Container with Dual Pre-buffered Hardware Streams -->
+  <div class="hero-video-bg-container">
+    <video
+      id="hero-video-1"
+      class="hero-video-stream active"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="Public/images/hero-men.jpg"
+    >
+      <source src="Public/images/hero-video-1.mp4" type="video/mp4">
+    </video>
+    <video
+      id="hero-video-2"
+      class="hero-video-stream"
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="Public/images/hero-men.jpg"
+    >
+      <source src="Public/images/hero-video-2.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <!-- Hero Editorial Foreground -->
+  <div class="wrap hero-cinematic-content">
+    <div class="badge hot">
+      <span>✦</span> Autumn / Winter 2026 Campaign
+    </div>
+    <h1 class="hero-title">
+      Streetwear<br>
+      <span class="hero-gradient-text">Redefined.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Architectural silhouettes, kinetic technical fabrics, and modular outerwear engineered for understated modern luxury.
+    </p>
+
+    <div class="hero-actions">
+      <a href="shop.html" class="hero-btn-primary">
+        Shop Collection
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="#featured" class="hero-btn-secondary">
+        Explore Drops
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+      </a>
+    </div>
+
+    <!-- Trust Highlights in Hero -->
+    <div class="hero-trust-row">
+      <span>⚡ Worldwide Express Shipping</span>
+      <span class="dot">&bull;</span>
+      <span>🛡️ 30-Day Guaranteed Returns</span>
+      <span class="dot">&bull;</span>
+      <span>★ 4.9/5 Vanguard Rated</span>
+    </div>
+  </div>
+
+  <!-- In-Hero Floating Luxury Video Controls Bar -->
+  <div class="hero-video-controls-bar">
+    <div class="hero-film-switcher">
+      <button class="film-tab active" id="film-tab-1" onclick="switchHeroVideo(1, this, 'Kinetic Campaign')">
+        Film 01: Kinetic
+      </button>
+      <button class="film-tab" id="film-tab-2" onclick="switchHeroVideo(2, this, 'Editorial Noir')">
+        Film 02: Noir
+      </button>
+    </div>
+    <div class="hero-playback-actions">
+      <button class="video-action-btn" id="hero-sound-btn" onclick="toggleHeroSound()" title="Toggle Audio">
+        <svg id="sound-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <span id="sound-label">Muted</span>
+      </button>
+      <button class="video-action-btn" id="hero-play-btn" onclick="toggleHeroPlay()" title="Play / Pause">
+        <svg id="play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST PILLARS ===== -->
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="ic-wrap">🛡️</div>
+        <div>
+          <h5>Encrypted Checkout</h5>
+          <p>Secure global card processing</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="ic-wrap">⚡</div>
+        <div>
+          <h5>Express Shipping</h5>
+          <p>Worldwide delivery in 48-72h</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="ic-wrap">💎</div>
+        <div>
+          <h5>Technical Fabrics</h5>
+          <p>Aerospace-grade bio-polymers</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="ic-wrap">✦</div>
+        <div>
+          <h5>Atelier Support</h5>
+          <p>24/7 dedicated concierge service</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROMOTIONAL TILES ===== -->
+<div class="wrap">
+  <div class="promo-grid">
+    <div class="promo">
+      <img class="bg" src="Public/images/promo-women.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/urban-promo1/600/340'">
+      <div class="content">
+        <span class="tag">Seasonal Drop</span>
+        <h3>Women's Streetwear</h3>
+        <a class="btn sm accent" href="shop.html">Shop Collection</a>
+      </div>
+    </div>
+    <div class="promo">
+      <img class="bg" src="Public/images/promo-men.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/urban-promo2/600/340'">
+      <div class="content">
+        <span class="tag">Outerwear Focus</span>
+        <h3>Men's Outerwear &amp; Gear</h3>
+        <a class="btn sm accent" href="shop.html">Explore Outerwear</a>
+      </div>
+    </div>
+    <div class="promo">
+      <img class="bg" src="Public/images/promo-kids.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/urban-promo3/600/340'">
+      <div class="content">
+        <span class="tag">Youth Capsule</span>
+        <h3>Urban Youth Essentials</h3>
+        <a class="btn sm accent" href="shop.html">View Capsule</a>
+      </div>
+    </div>
+    <div class="promo">
+      <img class="bg" src="Public/images/promo-access.avif" onerror="this.onerror=null;this.src='https://picsum.photos/seed/urban-promo4/600/340'">
+      <div class="content">
+        <span class="tag">Accessories</span>
+        <h3>Modular Bags &amp; Optics</h3>
+        <a class="btn sm accent" href="shop.html">Shop Accessories</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FEATURED CLOTHING SHOWROOM / FIT STUDIO ===== -->
+<section class="showroom-section" id="outfit-studio">
+  <div class="wrap">
+    <div class="showroom-container">
+      <div class="showroom-flex">
+        <!-- Interactive Clothing Stage -->
+        <div class="showroom-canvas-box" id="jacket-3d-box" title="Move cursor to tilt in 3D">
+          <img id="jacket-show-img" src="Public/images/product-cyber-jacket.jpg" alt="Modular Cyber Jacket" onerror="this.onerror=null;this.src='Public/images/Product-men\'s polo shirt.webp'">
+          <div class="showroom-hud">
+            <span>● Seasonal Spotlight</span>
+          </div>
+          <div class="showroom-hud-rotate">
+            <span>Interactive 3D Perspective</span>
+          </div>
+        </div>
+
+        <!-- Customizer Controls & Info -->
+        <div class="showroom-info">
+          <div class="eyebrow">Outerwear Innovation</div>
+          <h2>Modular Cyber Jacket [V-02]</h2>
+          <p>
+            An architectural bomber forged from waterproof matte nylon with magnetic Fidlock closures and internal thermal dispersion channels. Tested in extreme climates.
+          </p>
+
+          <!-- Size Selector -->
+          <div class="finish-title">Select Size:</div>
+          <div class="size-selector">
+            <button class="size-btn" onclick="selectSize('S', this)">S</button>
+            <button class="size-btn active" onclick="selectSize('M', this)">M</button>
+            <button class="size-btn" onclick="selectSize('L', this)">L</button>
+            <button class="size-btn" onclick="selectSize('XL', this)">XL</button>
+          </div>
+
+          <!-- Colorway Options -->
+          <div class="finish-title">Choose Colorway:</div>
+          <div class="finish-options">
+            <button class="finish-btn active" onclick="setJacketColor('Obsidian Black', this)">
+              <span class="swatch" style="background:#141720; border:1px solid #444;"></span> Obsidian
+            </button>
+            <button class="finish-btn" onclick="setJacketColor('Cyber Coral', this)">
+              <span class="swatch" style="background:#ff4820;"></span> Cyber Coral
+            </button>
+            <button class="finish-btn" onclick="setJacketColor('Stealth Grey', this)">
+              <span class="swatch" style="background:#555a68;"></span> Stealth Grey
+            </button>
+          </div>
+
+          <!-- Specs Nodes -->
+          <div class="showroom-specs">
+            <div class="spec-node">
+              <h6>Membrane</h6>
+              <p>Hydro-Proof 20k</p>
+            </div>
+            <div class="spec-node">
+              <h6>Hardware</h6>
+              <p>Magnetic Buckles</p>
+            </div>
+            <div class="spec-node">
+              <h6>Thermal Rating</h6>
+              <p>-10&deg;C Comfort</p>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:20px;">
+            <div style="font-size:28px; font-weight:800; color:var(--ink-heading);">$145 <span style="font-size:16px; color:var(--muted); text-decoration:line-through; font-weight:400;">$220</span></div>
+            <button class="btn accent" onclick="addJacketToBag()">
+              Add Jacket to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED STREETWEAR (3D TILT GRID) ===== -->
+<section class="wrap section">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Curated Drops</div>
+      <h2>Featured Streetwear</h2>
+    </div>
+    <a class="btn outline sm" href="shop.html">See All Apparel &rarr;</a>
+  </div>
+  <div class="pgrid" id="featured"></div>
+</section>
+
+<!-- ===== DEAL OF THE WEEK: SNEAKERS ===== -->
+<div class="wrap">
+  <div class="deal">
+    <div class="img-box">
+      <img src="Public/images/product-sneaker.jpg" alt="Aether Neon Runners" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sneaker/220/220'">
+    </div>
+    <div style="flex:1;">
+      <div class="badge hot" style="margin-bottom:10px;">Limited Drop 40% Off</div>
+      <h3>Deal of the Week: Aether Neon Runners</h3>
+      <p>Aerodynamic carbon fiber mesh construction with reactive holographic cushioning and neon piping.</p>
+    </div>
+    <div class="timer">
+      <div class="timer-tile" id="timer-days">27<span>Days</span></div>
+      <div class="timer-tile" id="timer-hours">15<span>Hours</span></div>
+      <div class="timer-tile" id="timer-min">50<span>Minutes</span></div>
+      <div class="timer-tile" id="timer-sec">24<span>Seconds</span></div>
+    </div>
+    <button class="btn accent" onclick="UrbanCart.add({name:'Aether Neon Runners', price:120, img:'product-sneaker.jpg'})">
+      Claim Deal ($120)
+    </button>
+  </div>
+</div>
+
+<!-- ===== BEST SELLERS (3D TILT GRID) ===== -->
+<section class="wrap section">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Most Coveted</div>
+      <h2>Best Sellers &amp; Essentials</h2>
+    </div>
+    <a class="btn outline sm" href="shop.html">Browse Archive &rarr;</a>
+  </div>
+  <div class="pgrid" id="bestseller"></div>
+</section>
+
+<!-- ===== SHOWROOM APPOINTMENT & LOCATION ===== -->
+<section class="wrap section">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Atelier Experience</div>
+      <h2>Flagship Boutique</h2>
+    </div>
+  </div>
+  <div class="contact-flex">
+    <form onsubmit="handleContact(event)">
+      <h3 style="font-size:20px; margin-bottom:18px;">Book a Private Fitting</h3>
+      <input class="field" id="c-name" placeholder="Full Name" required>
+      <input class="field" id="c-email" type="email" placeholder="Email Address" required>
+      <textarea class="field" id="c-msg" placeholder="Tell us your sizing or styling inquiry..." required></textarea>
+      <button class="btn accent" type="submit">Request Appointment &rarr;</button>
+    </form>
+    <div class="mapbox">
+      <img src="Public/images/map.png" alt="Showroom location" onerror="this.onerror=null;this.src='https://picsum.photos/seed/urban-map/560/280'">
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<div class="wrap partners">
+  <span>KINETIC</span>
+  <span>VORTEX-LAB</span>
+  <span>SOLARIS</span>
+  <span>CYBERWEAVE</span>
+  <span>NEO-AESTHETICS</span>
+</div>
+
+<!-- Shared Footer -->
+<footer id="site-footer"></footer>
+
+<!-- Shared JavaScript Engine -->
+<script src="common.js"></script>
+
+<!-- Homepage Interactive Logic -->
+<script>
+/* ==========================================================================
+   CLOTHING PRODUCTS DATA
+   ========================================================================== */
+const P = [
+  {n:"Modular Cyber Jacket", img:"product-cyber-jacket.jpg", price:"$145", old:"$220", sale:true, star:true},
+  {n:"Aether Neon Runners", img:"product-sneaker.jpg", price:"$120", old:"$180", sale:true, star:true},
+  {n:"Tactical Carbon Backpack", img:"product-backpack.jpg", price:"$95", old:"$135", sale:true},
+  {n:"Cyber Beanie Thermal", img:"product-beanie.png", price:"$15", old:"$25", sale:true}
+];
+
+const B = [
+  {n:"Matrix Polarized Shades", img:"product-sunglasses.jpg", price:"$35"},
+  {n:"Modular Polo Tech", img:"Product-men's polo shirt.webp", price:"$35", old:"$55", sale:true, star:true},
+  {n:"Active Aero Shorts", img:"product-men's short.avif", price:"$35"},
+  {n:"Prism Leather Bag", img:"product-woman's bag.jpg", price:"$35"}
+];
+
+function createProductCard(p) {
+  return `
+    <div class="card">
+      ${p.sale ? '<span class="badge hot">Sale!</span>' : '<span class="badge">New</span>'}
+      <div class="thumb">
+        <img src="Public/images/${p.img}" alt="${p.n}" onerror="this.onerror=null;this.src='https://picsum.photos/seed/${encodeURIComponent(p.n)}/240/240'">
+        <button class="quick-view-btn" onclick="UrbanQuickView.open({name:'${p.n}', price:'${p.price}', img:'${p.img}'})">
+          Quick View
+        </button>
+      </div>
+      <h4>${p.n}</h4>
+      <div class="stars">${p.star ? '★★★★★' : '★★★★☆'}</div>
+      <div class="price">
+        ${p.old ? `<span class="old">${p.old}</span>` : ''}
+        <span class="now">${p.price}</span>
+      </div>
+      <div class="card-actions">
+        <button class="card-add-btn" onclick="UrbanCart.add({name:'${p.n}', price:'${p.price}', img:'${p.img}'})">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          Add to Bag
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+document.getElementById('featured').innerHTML = P.map(createProductCard).join('');
+document.getElementById('bestseller').innerHTML = B.map(createProductCard).join('');
+
+/* ==========================================================================
+   CINEMATIC HERO VIDEO CONTROLS (Dual-Stream Hardware Accelerated)
+   ========================================================================== */
+let activeFilmIndex = 1;
+let isHeroMuted = true;
+let isHeroManuallyPaused = false;
+
+function getActiveHeroVideo() {
+  return activeFilmIndex === 1
+    ? document.getElementById('hero-video-1')
+    : document.getElementById('hero-video-2');
+}
+
+function switchHeroVideo(filmIdx, btn, label) {
+  if (activeFilmIndex === filmIdx) return;
+  activeFilmIndex = filmIdx;
+
+  document.querySelectorAll('.film-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const v1 = document.getElementById('hero-video-1');
+  const v2 = document.getElementById('hero-video-2');
+  if (!v1 || !v2) return;
+
+  const target = filmIdx === 1 ? v1 : v2;
+  const previous = filmIdx === 1 ? v2 : v1;
+
+  target.muted = isHeroMuted;
+  if (!isHeroMuted) target.volume = 0.5;
+
+  if (!isHeroManuallyPaused) {
+    target.play().catch(() => {});
+  }
+
+  target.classList.add('active');
+  previous.classList.remove('active');
+
+  // Pause previous video stream after cross-fade to free 100% GPU
+  setTimeout(() => {
+    if (activeFilmIndex === filmIdx) {
+      previous.pause();
+    }
+  }, 450);
+
+  UrbanToast.show('Campaign Switched', `${label} is now streaming.`, '🎬');
+}
+
+function toggleHeroSound() {
+  isHeroMuted = !isHeroMuted;
+  const v1 = document.getElementById('hero-video-1');
+  const v2 = document.getElementById('hero-video-2');
+  const label = document.getElementById('sound-label');
+  const icon = document.getElementById('sound-icon');
+
+  [v1, v2].forEach(v => {
+    if (v) {
+      v.muted = isHeroMuted;
+      if (!isHeroMuted) v.volume = 0.5;
+    }
+  });
+
+  if (isHeroMuted) {
+    if (label) label.textContent = 'Muted';
+    if (icon) icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+    UrbanToast.show('Audio Muted', 'Video sound silenced.', '🔇');
+  } else {
+    if (label) label.textContent = 'Audio On';
+    if (icon) icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+    UrbanToast.show('Audio Active', 'Campaign soundtrack playing.', '🔊');
+  }
+}
+
+function toggleHeroPlay() {
+  const activeVideo = getActiveHeroVideo();
+  const icon = document.getElementById('play-icon');
+  if (!activeVideo) return;
+
+  if (activeVideo.paused) {
+    activeVideo.play().catch(() => {});
+    isHeroManuallyPaused = false;
+    if (icon) icon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
+  } else {
+    activeVideo.pause();
+    isHeroManuallyPaused = true;
+    if (icon) icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+  }
+}
+
+// Auto-pause video when scrolled out of viewport to guarantee 60 FPS everywhere
+const heroSection = document.getElementById('hero-section');
+if (heroSection && 'IntersectionObserver' in window) {
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const activeVideo = getActiveHeroVideo();
+      if (!activeVideo) return;
+      if (entry.isIntersecting) {
+        if (!isHeroManuallyPaused) activeVideo.play().catch(() => {});
+      } else {
+        activeVideo.pause();
+      }
+    });
+  }, { threshold: 0.1 });
+  heroObserver.observe(heroSection);
+}
+
+/* ==========================================================================
+   JACKET SHOWROOM / FIT STUDIO
+   ========================================================================== */
+let selectedJacketSize = 'M';
+let selectedJacketColor = 'Obsidian Black';
+
+function selectSize(size, btn) {
+  selectedJacketSize = size;
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  UrbanToast.show('Size Selected', `Size ${size} equipped.`);
+}
+
+function setJacketColor(colorName, btn) {
+  selectedJacketColor = colorName;
+  document.querySelectorAll('.finish-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  UrbanToast.show('Colorway Selected', `${colorName} equipped.`, '🎨');
+}
+
+function addJacketToBag() {
+  UrbanCart.add({
+    name: `Modular Cyber Jacket [${selectedJacketColor} / Size ${selectedJacketSize}]`,
+    price: 145,
+    img: 'product-cyber-jacket.jpg'
+  });
+}
+
+// Throttled 3D Tilt on Jacket Box
+const jacketBox = document.getElementById('jacket-3d-box');
+const jacketImg = document.getElementById('jacket-show-img');
+if (jacketBox && jacketImg) {
+  let jBounds = null;
+  let jRaf = null;
+
+  jacketBox.addEventListener('mouseenter', () => {
+    jBounds = jacketBox.getBoundingClientRect();
+  }, { passive: true });
+
+  jacketBox.addEventListener('mousemove', (e) => {
+    if (!jBounds) jBounds = jacketBox.getBoundingClientRect();
+    if (jRaf) return;
+    jRaf = requestAnimationFrame(() => {
+      jRaf = null;
+      const x = (e.clientX - jBounds.left) / jBounds.width - 0.5;
+      const y = (e.clientY - jBounds.top) / jBounds.height - 0.5;
+      jacketImg.style.transform = `perspective(800px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.06)`;
+    });
+  }, { passive: true });
+
+  jacketBox.addEventListener('mouseleave', () => {
+    if (jRaf) {
+      cancelAnimationFrame(jRaf);
+      jRaf = null;
+    }
+    jBounds = null;
+    jacketImg.style.transform = '';
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   COUNTDOWN TIMER
+   ========================================================================== */
+let countdownTotalSeconds = (27 * 86400) + (15 * 3600) + (50 * 60) + 24;
+setInterval(() => {
+  if (countdownTotalSeconds > 0) countdownTotalSeconds--;
+  const days = Math.floor(countdownTotalSeconds / 86400);
+  const hours = Math.floor((countdownTotalSeconds % 86400) / 3600);
+  const mins = Math.floor((countdownTotalSeconds % 3600) / 60);
+  const secs = countdownTotalSeconds % 60;
+
+  const dEl = document.getElementById('timer-days');
+  const hEl = document.getElementById('timer-hours');
+  const mEl = document.getElementById('timer-min');
+  const sEl = document.getElementById('timer-sec');
+
+  if (dEl) dEl.innerHTML = `${days}<span>Days</span>`;
+  if (hEl) hEl.innerHTML = `${String(hours).padStart(2, '0')}<span>Hours</span>`;
+  if (mEl) mEl.innerHTML = `${String(mins).padStart(2, '0')}<span>Minutes</span>`;
+  if (sEl) sEl.innerHTML = `${String(secs).padStart(2, '0')}<span>Seconds</span>`;
+}, 1000);
+
+/* ==========================================================================
+   CONTACT FORM SUBMIT
+   ========================================================================== */
+function handleContact(e) {
+  e.preventDefault();
+  const name = document.getElementById('c-name').value;
+  UrbanToast.show('Appointment Requested', `Thank you ${name}. Our styling concierge will contact you.`, '✦');
+  e.target.reset();
+}
+</script>
+</body>
+</html>

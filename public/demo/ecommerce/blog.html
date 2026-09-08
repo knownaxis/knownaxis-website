@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal &amp; Insights — URBANisty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="blog">
+<header id="site-header"></header>
+
+<section class="page-banner">
+  <div class="wrap">
+    <div class="badge cyan" style="margin-bottom:12px;">Editorial Dispatch</div>
+    <h1>The Cyber-Aesthetic Journal</h1>
+    <div class="crumb"><a href="index.html">Home</a> / Journal</div>
+  </div>
+</section>
+
+<div class="wrap section">
+  <div class="blog-grid" id="blog-grid"></div>
+  <div style="text-align:center; margin-top:48px;">
+    <button class="btn outline" onclick="UrbanToast.show('Archive Synchronized', 'All historical dispatches loaded.', '✦')">Load More Dispatches</button>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+<script src="common.js"></script>
+<script>
+const posts = [
+  {t:"Volumetric 3D Rendering in Next-Gen Streetwear", i:"post1", tag:"Cyber-Tech", date:"October 12, 2026"},
+  {t:"Aerospace Titanium Alloys: Wearable Architecture", i:"post2", tag:"Materials", date:"October 08, 2026"},
+  {t:"Spatial Audio & Planar Magnetic Acoustic Enclosures", i:"post3", tag:"Acoustics", date:"September 29, 2026"},
+  {t:"Generative Design & Procedural Micro-Structures", i:"post4", tag:"Innovation", date:"September 18, 2026"},
+  {t:"Closed-Loop Carbon Capture in Avant-Garde Textiles", i:"post5", tag:"Ecology", date:"September 10, 2026"},
+  {t:"The Geometry of Cyber-Luxury: Modern Form Factors", i:"post6", tag:"Design", date:"August 25, 2026"}
+];
+
+document.getElementById('blog-grid').innerHTML = posts.map(p=>`
+  <a href="single-post.html" class="card" style="display:flex; flex-direction:column; text-decoration:none;">
+    <div class="thumb" style="height:190px;">
+      <img src="Public/images/blog-${p.i}.jpg" alt="${p.t}" onerror="this.onerror=null;this.src='https://picsum.photos/seed/${p.i}/380/220'" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.85);">
+      <span class="badge" style="position:absolute; top:12px; left:12px;">${p.tag}</span>
+    </div>
+    <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">🗓 ${p.date}</div>
+    <h4 style="font-size:16px; margin-bottom:12px; color:var(--ink-heading); flex:1;">${p.t}</h4>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">
+      An in-depth exploration of technical breakthroughs shaping modern silhouettes and experiential luxury.
+    </p>
+    <div style="display:flex; align-items:center; color:var(--accent); font-size:13px; font-weight:700;">
+      Read Dispatch &rarr;
+    </div>
+  </a>`).join('');
+</script>
+</body>
+</html>

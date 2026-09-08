@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volumetric 3D Rendering in Streetwear — URBANisty Journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="blog">
+<header id="site-header"></header>
+
+<section class="page-banner">
+  <div class="wrap">
+    <div class="badge cyan" style="margin-bottom:12px;">Deep Dive &bull; 6 Min Read</div>
+    <h1 style="font-size:clamp(26px, 3.8vw, 42px); max-width:820px; margin:0 auto 14px;">
+      Volumetric 3D Rendering in Next-Gen Streetwear &amp; Hardware
+    </h1>
+    <div class="crumb">By Atelier Research Team &nbsp;&bull;&nbsp; October 12, 2026 &nbsp;&bull;&nbsp; Materials &amp; Computation</div>
+  </div>
+</section>
+
+<div class="wrap section">
+  <div class="post-flex">
+    <!-- Main Article -->
+    <div class="post-main">
+      <div style="border-radius:16px; overflow:hidden; border:1px solid var(--line); margin-bottom:28px;">
+        <img src="Public/images/hero-men.png" alt="Hero visual" style="width:100%; max-height:420px; object-fit:cover;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/postmain/800/400'">
+      </div>
+      
+      <h3 style="font-size:24px; margin-bottom:14px; color:var(--ink-heading);">Parametric Silhouettes and Real-Time Spatial Simulation</h3>
+      <p style="color:var(--muted); font-size:15px; margin-bottom:20px; line-height:1.8;">
+        The classical boundaries dividing architectural drafting, aerospace engineering, and wearable garments have irrevocably blurred. Through the adoption of real-time WebGL spatial shaders and procedural mesh generation, contemporary designers can now simulate tensile stress, aerodynamics, and thermal dispersion prior to weaving the inaugural yarn.
+      </p>
+
+      <div style="background:var(--surface-card); border-left:4px solid var(--accent); padding:24px; border-radius:8px; margin:28px 0;">
+        <p style="font-size:16px; font-style:italic; color:var(--ink-heading); margin:0;">
+          "We do not merely drape fabrics over human anatomy; we construct protective volumetric shells tuned for kinetic agility in cyber-urban environments."
+        </p>
+      </div>
+
+      <h3 style="font-size:22px; margin:28px 0 14px; color:var(--ink-heading);">Molecular Closed-Loop Polymers</h3>
+      <p style="color:var(--muted); font-size:15px; margin-bottom:20px; line-height:1.8;">
+        Coupling additive 3D fabrication with molecularly depolymerizable composites ensures that every silhouette can be deconstructed into fundamental monomers and reconstituted infinitely with negligible structural degradation.
+      </p>
+
+      <div class="post-nav" style="border-top:1px solid var(--line); padding-top:24px; margin-top:36px; display:flex; justify-content:space-between;">
+        <a href="blog.html" class="btn outline sm">&larr; Return to Journal</a>
+        <a href="shop.html" class="btn accent sm">Explore New Drops &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:12px; padding:24px; margin-bottom:24px;">
+        <h5 style="margin-bottom:16px;">Curated Dispatches</h5>
+        <ul class="newslist" id="latest-news"></ul>
+      </div>
+
+      <div class="deal" style="flex-direction:column; padding:28px; text-align:center; gap:16px;">
+        <div class="badge hot">VIP Privilege</div>
+        <h4 style="font-size:18px;">Private Styling Studio</h4>
+        <p style="font-size:13px; color:var(--muted);">Book a 1-on-1 consultation with our lead fashion directors.</p>
+        <a href="contact.html" class="btn accent sm" style="width:100%;">Book Session</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+<script src="common.js"></script>
+<script>
+const latest = [
+  "Volumetric 3D Rendering in Streetwear",
+  "Aerospace Titanium Alloys: Wearable Architecture",
+  "Spatial Audio & Planar Magnetic Acoustic Enclosures",
+  "Generative Design & Procedural Micro-Structures"
+];
+document.getElementById('latest-news').innerHTML = latest.map((t, i) => `
+  <li style="margin-bottom:14px; display:flex; gap:12px; align-items:center;">
+    <span style="color:var(--accent); font-weight:800; font-size:14px;">0${i+1}</span>
+    <a href="single-post.html" style="font-size:13px; color:var(--ink-heading); line-height:1.4;">${t}</a>
+  </li>
+`).join('');
+</script>
+</body>
+</html>
