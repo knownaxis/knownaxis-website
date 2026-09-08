@@ -99,7 +99,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-[13.5px] text-slate-600 dark:text-[#8a8c92]">
               <a href="https://knownaxis.framer.website/legals/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Privacy Policy</a>
               <a href="https://knownaxis.framer.website/legals/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Terms of Service</a>
-              <a href="mailto:hello@knownaxis.com" className="hover:text-brand dark:hover:text-white transition-colors">hello@knownaxis.com</a>
+              <a href="mailto:info@knownaxis.com" className="hover:text-brand dark:hover:text-white transition-colors">info@knownaxis.com</a>
             </div>
           </div>
         </div>
@@ -108,10 +108,10 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 py-8 text-[12.5px] text-slate-500 dark:text-[#6f7178] md:flex-row">
           <span>© {new Date().getFullYear()} Knownaxis. Built for ambitious founders and leaders.</span>
           <div className="flex gap-6">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">LinkedIn</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">YouTube</a>
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Discord</a>
+            <a href="https://www.linkedin.com/company/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://www.instagram.com/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Instagram</a>
+            <a href="https://x.com/KnownAxis" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">X</a>
+            <a href="hhttps://in.pinterest.com/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Pinterest</a>
           </div>
         </div>
       </div>

@@ -26,24 +26,24 @@ export interface ProjectItem {
 
 const PROJECTS: ProjectItem[] = [
   {
-    id: 'homewise',
-    title: 'Homewise Realty Discovery Platform',
-    client: 'Homewise Real Estate Group',
-    category: 'Real Estate & FinTech',
-    tag: 'NEXT.JS · THREE.JS · UI/UX',
-    description:
-      'A high-performance property discovery and neighborhood intelligence platform with verified property listings, mortgage scenario simulators, and virtual 3D tour integrations.',
-    metrics: [
-      { label: 'Inbound Inquiries', value: '+310%' },
-      { label: 'Avg Session Time', value: '4.2 min' },
-      { label: 'Page Speed', value: '98/100' },
-    ],
-    tags: ['Next.js 14', 'TypeScript', 'Three.js 3D', 'Tailwind CSS', 'Framer Motion'],
-    demoUrl: 'https://knownaxis.framer.website/case-studies/ecommerce-order-automation',
-    caseStudyUrl: 'https://knownaxis.framer.website/case-studies/ecommerce-order-automation',
-    previewGradient: 'from-blue-600/30 via-indigo-600/20 to-cyan-500/20',
-    browserUrl: 'homewise-realestate.demo.knownaxis.com',
-  },
+  id: 'vizbix',
+  title: 'Vizbix Profit Intelligence Platform',
+  client: 'Vizbix',
+  category: 'SaaS & AI',
+  tag: 'ASTRO · VUE.JS · CLOUDFLARE · AI',
+  description:
+    'A profit intelligence and unit economics platform that reconciles ad spend, shipping, platform fees, and RTO losses to reveal true net margin per product.',
+  metrics: [
+    { label: 'Founders Guessing Margins', value: '68%' },
+    { label: 'Time to True Net Profit', value: '2 min' },
+    { label: 'Avg RTO Margin Leak', value: '23%' },
+  ],
+  tags: ['Astro', 'Vue.js', 'Cloudflare Workers', 'Cloudflare D1', 'Tailwind CSS'],
+  demoUrl: 'https://app.vizbix.com/?demo=1',
+  caseStudyUrl: 'https://www.vizbix.com/',
+  previewGradient: 'from-slate-900/40 via-indigo-950/30 to-indigo-600/20',
+  browserUrl: 'app.vizbix.com',
+},
   {
     id: 'clearpath',
     title: 'Clearpath AI Pipeline & Web Architecture',

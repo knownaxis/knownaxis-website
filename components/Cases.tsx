@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 
 const cases = [
   {
-    name: 'Homewise Realty',
-    client: 'Residential & Commercial Real Estate Group',
-    tag: 'REAL ESTATE · NEXT.JS · UI/UX',
-    badge: 'FEATURED CASE',
-    stats: [
-      { label: 'Inbound Inquiries', value: '+310%' },
-      { label: 'Time on Platform', value: '4.2 min' },
-      { label: 'MVP Delivery', value: '14 Days' },
-    ],
-    challenge:
-      'First-time homebuyers faced overwhelming technical jargon, fragmented listings, and zero guided journey, resulting in an 82% bounce rate on property pages.',
-    built:
-      'Engineered an interactive property discovery platform with verified neighborhood data, instant mortgage calculators, and a frictionless booking funnel.',
-    href: 'https://knownaxis.framer.website/case-studies/ecommerce-order-automation',
-    color: 'from-blue-500/20 to-indigo-500/10',
-  },
+  name: 'Vizbix',
+  client: 'D2C Brands & E-commerce Operators',
+  tag: 'SAAS · ASTRO · CLOUDFLARE · AI',
+  badge: 'FEATURED CASE',
+  stats: [
+    { label: 'Avg RTO Margin Leak', value: '23%' },
+    { label: 'Time to True Net Profit', value: '2 min' },
+    { label: 'Founders Guessing Margins', value: '68%' },
+  ],
+  challenge:
+    'E-commerce brands scale top-line revenue without visibility into per-SKU net profitability, losing margins to hidden ad spend, shipping fees, returns, and unreconciled RTO losses.',
+  built:
+    'Engineered a real-time profit intelligence platform connecting store, ads, and logistics stacks to compute unit economics, run scenario simulations, and provide automated AI margin actions.',
+  href: 'https://www.vizbix.com/',
+  color: 'from-slate-900/30 to-indigo-950/20',
+},
   {
     name: 'Clearpath SaaS',
     client: 'B2B Enterprise Workflow Solutions',

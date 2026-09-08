@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Knownaxis - Make your website known',
   description:
     'Custom AI systems and workflows designed to scale your business. Save 25+ hours every week and 3x your output.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
