@@ -86,7 +86,7 @@ export function BookingModalProvider({ children }: { children: React.ReactNode }
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
 
@@ -110,26 +110,31 @@ export function BookingModalProvider({ children }: { children: React.ReactNode }
     setErrors({});
     setIsSubmitting(true);
 
-    // Simulate saving and dispatching inquiry
-    setTimeout(() => {
-      try {
-        const inquiries = JSON.parse(localStorage.getItem('knownaxis_inquiries') || '[]');
-        inquiries.push({
+    try {
+      const res = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name,
           mobile,
           email,
           description,
-          title: modalOptions.title || 'General Booking Call',
-          timestamp: new Date().toISOString(),
-        });
-        localStorage.setItem('knownaxis_inquiries', JSON.stringify(inquiries));
-      } catch {
-        // Safe fallback if localStorage is disabled
+          formTitle: modalOptions.title || 'General Booking Call',
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!data.success) {
+        throw new Error(data.message || 'Submission failed');
       }
 
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 600);
+    } catch {
+      setIsSubmitting(false);
+      setErrors({ submit: 'Something went wrong. Please try again or contact us directly.' });
+    }
   };
 
   const currentTitle = modalOptions.title || 'Book a Strategy Call';
@@ -276,6 +281,10 @@ export function BookingModalProvider({ children }: { children: React.ReactNode }
                         <p className="mt-1 text-[11px] text-red-500">{errors.description}</p>
                       )}
                     </div>
+
+                    {errors.submit && (
+                      <p className="text-center text-[12px] text-red-500">{errors.submit}</p>
+                    )}
 
                     {/* Submit Button */}
                     <button
