@@ -1,13 +1,28 @@
 'use client';
 import { motion } from 'framer-motion';
 import { MagneticLink } from './Hero';
+import { useBookingModal } from './BookingModal';
 
 const services = [
   {
-    tag: 'FLAGSHIP · ENGINEERING',
-    title: 'Modern Web Apps & 3D Experiences',
-    desc: 'High-speed, production-grade web applications crafted with Next.js 14, TypeScript, Tailwind CSS, and WebGL Three.js animations that captivate visitors.',
-    features: ['Next.js 14 App Router', 'Three.js & WebGL 3D', 'Sub-second LCP & SEO', 'Mobile First Responsive'],
+    tag: 'DESIGN & BRANDING',
+    title: 'Branding · Visual Identity · UI/UX Design',
+    desc: 'Build a recognizable identity and digital experience around your brand that customers remember, trust, and connect with.',
+    features: ['Visual Identity', 'UI/UX Design', 'Design Systems', 'Brand Strategy'],
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="12" cy="12" r="9" strokeWidth={1.75} />
+        <circle cx="12" cy="12" r="5" strokeWidth={1.75} />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      </svg>
+    ),
+    highlight: true,
+  },
+  {
+    tag: 'WEB DEVELOPMENT',
+    title: 'Frontend · Backend · Web Apps',
+    desc: 'From landing pages to custom web applications, we build digital products that work flawlessly and convert.',
+    features: ['Next.js 14 & React', 'High Performance', 'Interactive 3D', 'Mobile First'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -16,53 +31,55 @@ const services = [
     highlight: true,
   },
   {
-    tag: 'FLAGSHIP · DESIGN',
-    title: 'Distinctive Branding & UI/UX',
-    desc: 'Transform your digital presence from generic to iconic with bespoke visual identity systems, interactive prototypes, and conversion-focused user journeys.',
-    features: ['Design Systems & Figma', 'Interactive Micro-motion', 'Brand Guidelines', 'User Testing & Wireframing'],
+    tag: 'SEO & DIGITAL GROWTH',
+    title: 'SEO · Analytics · Conversion Optimization',
+    desc: 'Help the right people discover your business, rank higher on search engines, and turn attention into measurable growth.',
+    features: ['Technical SEO', 'Search Dominance', 'Conversion Audits', 'Analytics Pipelines'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
-    highlight: true,
-  },
-  {
-    tag: 'SYSTEMS & AI',
-    title: 'Autonomous AI Workflows & Systems',
-    desc: 'Save 25+ hours weekly by integrating intelligent AI agents and automated workflows that handle lead qualification, customer intake, and data operations.',
-    features: ['Custom AI Agents', 'CRM & Tool Integrations', 'Automated Lead Qualification', 'Saves 25+ Hours/Week'],
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <ellipse cx="12" cy="5" rx="9" ry="3" strokeWidth={1.75} />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5 M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6" />
       </svg>
     ),
   },
   {
-    tag: 'GROWTH & SEO',
-    title: 'Data-Driven Growth & Conversion',
-    desc: 'Maximize the value of every visitor with rigorous conversion rate optimization, technical search engine visibility, and actionable analytics pipelines.',
-    features: ['Technical Core Web Vitals', 'Conversion Funnel Audits', 'A/B Testing Frameworks', 'Search Dominance'],
+    tag: 'SOCIAL MEDIA & CONTENT',
+    title: 'Social Media · Reels · UGC · Content Creation',
+    desc: 'Create a consistent digital presence with high-impact creative assets that keep your brand visible, memorable, and engaging.',
+    features: ['Viral Reels & Video', 'UGC Campaigns', 'Brand Storytelling', 'Multi-Platform Reach'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
   },
   {
-    tag: 'CONTENT & PRESENCE',
-    title: 'Continuous Digital Dominance',
-    desc: 'Keep your brand top-of-mind with cohesive cross-platform creative assets, short-form video strategies, and high-impact storytelling.',
-    features: ['High-Retention Visual Assets', 'Cross-Platform Cohesion', 'Brand Voice Guidelines', 'Ongoing Refinements'],
+    tag: 'DATA & ANALYTICS',
+    title: 'Data Analysis · Business Insights · Reporting',
+    desc: 'Turn your business data into clear insights that help you make better decisions and eliminate margin leakage. *Powered by Vizbix',
+    features: ['Profit Intelligence', 'Unit Economics', 'Executive Dashboards', 'Powered by Vizbix'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 18v-6a9 9 0 0118 0v6 M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3v5zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3v5z" />
+      </svg>
+    ),
+  },
+  {
+    tag: 'WEBSITE CARE & SPEED',
+    title: 'Website Redesign · Speed · Maintenance',
+    desc: 'Keep your website lightning fast, modern, and secure with continuous speed optimization, Core Web Vitals tuning, and proactive maintenance.',
+    features: ['Speed Optimization', 'Core Web Vitals', 'Security & Backups', 'Ongoing Enhancements'],
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
 ];
 
 export default function Services() {
+  const { openModal } = useBookingModal();
+
   return (
     <section id="services" className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
       {/* Subtle background ambient light */}
@@ -145,7 +162,17 @@ export default function Services() {
 
         {/* CTA Strip */}
         <div className="mt-14 flex flex-col items-center justify-center gap-4 text-center">
-          <MagneticLink href="https://cal.com">Schedule Your Discovery Call →</MagneticLink>
+          <MagneticLink
+            onClick={() =>
+              openModal({
+                title: 'Schedule Your Discovery Call',
+                subtitle:
+                  'A 30-minute deep-dive into your requirements, tech stack, and goals. We will be right back with a confirmation.',
+              })
+            }
+          >
+            Schedule Your Discovery Call →
+          </MagneticLink>
           <span className="text-xs text-slate-500 dark:text-grey">30-min strategy session · Zero obligation</span>
         </div>
       </div>

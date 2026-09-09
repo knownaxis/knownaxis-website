@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useBookingModal } from '@/components/BookingModal';
 
 // =========================================================================
 // 🚀 FUTURE WEBSITE DESIGNS: ADD YOUR NEW PROJECTS HERE!
@@ -125,6 +126,7 @@ const PROJECTS: ProjectItem[] = [
 const CATEGORIES = ['All', 'SaaS & AI', 'Real Estate & FinTech', 'E-Commerce & 3D'] as const;
 
 export default function WorkPage() {
+  const { openModal } = useBookingModal();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const filteredProjects =
@@ -313,14 +315,18 @@ export default function WorkPage() {
               <p className="mt-2.5 max-w-sm text-sm text-slate-600 dark:text-grey leading-relaxed">
                 Ready to elevate your company with an unmistakable digital identity, interactive 3D motion, and custom AI systems?
               </p>
-              <a
-                href="https://cal.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 rounded-full bg-slate-900 text-white dark:bg-white dark:text-black px-7 py-3 text-sm font-semibold shadow-lg hover:shadow-brand/20 transition-all"
+              <button
+                onClick={() =>
+                  openModal({
+                    title: 'Schedule Your Discovery Call',
+                    subtitle:
+                      'A 30-minute deep-dive into your requirements, tech stack, and goals. We will be right back with a confirmation.',
+                  })
+                }
+                className="mt-6 rounded-full bg-slate-900 text-white dark:bg-white dark:text-black px-7 py-3 text-sm font-semibold shadow-lg hover:shadow-brand/20 transition-all active:scale-95"
               >
                 Schedule Your Discovery Call →
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MagneticLink } from './Hero';
+import { useBookingModal } from './BookingModal';
 
 const steps = [
   {
@@ -65,6 +66,7 @@ const steps = [
 const STEP_DURATION = 5000;
 
 export default function Process() {
+  const { openModal } = useBookingModal();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const startRef = useRef<number>(Date.now());
@@ -169,8 +171,18 @@ export default function Process() {
             })}
 
             <div className="mt-6 flex flex-col gap-2">
-              <MagneticLink href="https://cal.com">Book Your 30-Min Strategy Call →</MagneticLink>
-              <span className="text-[11.5px] sm:text-xs text-slate-500 dark:text-grey/70 text-center">Zero commitment · Instant calendar confirmation</span>
+              <MagneticLink
+                onClick={() =>
+                  openModal({
+                    title: 'Book Your 30-Min Strategy Call',
+                    subtitle:
+                      'Zero commitment · Direct discussion about your architecture, timeline, and goals.',
+                  })
+                }
+              >
+                Book Your 30-Min Strategy Call →
+              </MagneticLink>
+              <span className="text-[11.5px] sm:text-xs text-slate-500 dark:text-grey/70 text-center">Zero commitment · Instant callback confirmation</span>
             </div>
           </div>
 

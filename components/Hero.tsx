@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import ErrorBoundary from './ErrorBoundary';
+import { useBookingModal } from './BookingModal';
 
 const HeroVisual3D = dynamic(() => import('./HeroVisual3D'), {
   ssr: false,
@@ -22,36 +23,43 @@ const item = {
 };
 
 export default function Hero() {
+  const { openModal } = useBookingModal();
+
   return (
-    <section className="relative flex min-h-[92vh] sm:min-h-screen w-full items-center justify-center overflow-hidden px-5 sm:px-6 pt-28 sm:pt-32 pb-16">
-      {/* Full-bleed 3D Art covering the entire hero page */}
-      <div className="absolute inset-0 z-0 h-full w-full">
-        <ErrorBoundary>
+    <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-12 sm:pb-16">
+      {/* 3D Background Canvas Layer */}
+      <div className="absolute inset-0 z-0 opacity-70 dark:opacity-85 pointer-events-none">
+        <ErrorBoundary fallback={<div className="h-full w-full bg-transparent" />}>
           <HeroVisual3D />
         </ErrorBoundary>
       </div>
 
-      {/* Subtle radial depth overlay for high text legibility */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.45)_0%,rgba(248,249,252,0.9)_80%)] dark:bg-[radial-gradient(circle_at_center,rgba(11,12,16,0.3)_0%,rgba(11,12,16,0.85)_85%)]" />
+      {/* Radial soft gradient overlay for readability */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-transparent via-slate-50/50 dark:via-[#0b0c10]/40 to-slate-50 dark:to-[#0b0c10]" />
 
-      {/* Centered Hero Content */}
-      <div className="pointer-events-none relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
-        <motion.div variants={container} initial="hidden" animate="show" className="flex flex-col items-center">
-          <motion.span
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 text-center pointer-events-none">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="flex flex-col items-center"
+        >
+          {/* Top Capsule Badge */}
+          <motion.div
             variants={item}
-            className="mb-5 sm:mb-6 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-widest text-brand backdrop-blur-md"
+            className="mb-5 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5 px-3.5 sm:px-4 py-1.5 text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-grey backdrop-blur-md shadow-sm"
           >
-            DESIGN · DEVELOP · GROW
-          </motion.span>
+            <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
+            <span>Accepting Selected Q3/Q4 Client Engagements</span>
+          </motion.div>
 
           <motion.h1
             variants={item}
-            className="text-[clamp(2.1rem,6.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-tight text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-md"
+            className="max-w-4xl text-[clamp(2.4rem,7vw,5.2rem)] font-extrabold tracking-tight leading-[1.08] text-slate-900 dark:text-white"
           >
-            Make your website
-            <br />
-            <span className="bg-gradient-to-r from-slate-900 via-indigo-600 to-brand dark:from-white dark:via-indigo-100 dark:to-brand bg-clip-text text-transparent">
-              Known to your customers.
+            Make your website{' '}
+            <span className="bg-gradient-to-r from-brand via-indigo-400 to-indigo-200 bg-clip-text text-transparent">
+              known.
             </span>
           </motion.h1>
 
@@ -70,7 +78,17 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="pointer-events-auto mt-8 sm:mt-9 w-full sm:w-auto">
-            <MagneticLink href="https://cal.com">Start your project →</MagneticLink>
+            <MagneticLink
+              onClick={() =>
+                openModal({
+                  title: 'Start Your Project',
+                  subtitle:
+                    'Share your vision and requirements. We will be right back with a custom architecture plan & estimate.',
+                })
+              }
+            >
+              Start your project →
+            </MagneticLink>
           </motion.div>
         </motion.div>
       </div>
@@ -78,16 +96,45 @@ export default function Hero() {
   );
 }
 
-export function MagneticLink({ href, children }: { href: string; children: React.ReactNode }) {
+export function MagneticLink({
+  href,
+  onClick,
+  children,
+  className,
+}: {
+  href?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  if (onClick) {
+    return (
+      <motion.button
+        type="button"
+        onClick={onClick}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+        className={`inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-8 py-4 text-[14.5px] sm:text-[15px] font-semibold shadow-xl hover:shadow-brand/25 transition-all ${
+          className || ''
+        }`}
+      >
+        {children}
+      </motion.button>
+    );
+  }
+
   return (
     <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href || '#'}
+      target={href?.startsWith('http') ? '_blank' : undefined}
+      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-      className="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-8 py-4 text-[14.5px] sm:text-[15px] font-semibold shadow-xl hover:shadow-brand/25 transition-all"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-8 py-4 text-[14.5px] sm:text-[15px] font-semibold shadow-xl hover:shadow-brand/25 transition-all ${
+        className || ''
+      }`}
     >
       {children}
     </motion.a>

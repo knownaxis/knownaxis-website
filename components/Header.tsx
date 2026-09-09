@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
 import KnownaxisLogo from './KnownaxisLogo';
+import { useBookingModal } from './BookingModal';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { openModal } = useBookingModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 15);
@@ -69,14 +71,18 @@ export default function Header() {
             )}
           </button>
 
-          <a
-            href="https://cal.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() =>
+              openModal({
+                title: 'Book a Free Call',
+                subtitle:
+                  'Connect directly with our engineering & design team to discuss your digital architecture & goals.',
+              })
+            }
             className="rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-white/90 px-5 py-2 text-[13px] font-semibold transition-all hover:shadow-lg active:scale-95"
           >
             Book Free Call
-          </a>
+          </button>
         </div>
 
         {/* Mobile Header Controls */}
@@ -145,15 +151,19 @@ export default function Header() {
                 Contact
               </a>
               <div className="pt-2">
-                <a
-                  href="https://cal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeMenu}
-                  className="flex w-full items-center justify-center rounded-xl bg-brand py-3 text-center text-sm font-semibold text-white shadow-lg"
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    openModal({
+                      title: 'Book a Free Call',
+                      subtitle:
+                        'Connect directly with our engineering & design team to discuss your digital architecture & goals.',
+                    });
+                  }}
+                  className="flex w-full items-center justify-center rounded-xl bg-brand py-3 text-center text-sm font-semibold text-white shadow-lg active:scale-95 transition-transform"
                 >
                   Book Free Call →
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>

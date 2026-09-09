@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useBookingModal } from './BookingModal';
 
 const faqs = [
   {
@@ -27,6 +28,7 @@ const faqs = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0); // first open by default
+  const { openModal } = useBookingModal();
 
   return (
     <section id="faq" className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200 dark:border-line/40">
@@ -50,15 +52,18 @@ export default function FAQ() {
               <p className="mt-1.5 text-xs text-slate-600 dark:text-grey">
                 Speak directly with an engineer to assess your stack and goals.
               </p>
-              <a
-                href="https://cal.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() =>
+                  openModal({
+                    title: 'Book 15-Min Q&A Call',
+                    subtitle: 'Speak directly with an engineer to assess your stack and project goals.',
+                  })
+                }
                 className="mt-3.5 inline-flex items-center gap-2 text-xs font-semibold text-brand hover:underline"
               >
                 <span>Book 15-min Q&A Call</span>
                 <span>→</span>
-              </a>
+              </button>
             </div>
           </div>
 

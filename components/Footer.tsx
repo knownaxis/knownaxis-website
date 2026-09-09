@@ -1,8 +1,12 @@
 'use client';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import KnownaxisLogo from './KnownaxisLogo';
+import { useBookingModal } from './BookingModal';
 
 export default function Footer() {
+  const { openModal } = useBookingModal();
+
   return (
     <footer id="contact" className="relative border-t border-slate-200 dark:border-line/40 bg-slate-50 dark:bg-[#07080b] pt-16 sm:pt-20 text-slate-700 dark:text-[#cfd0d4] overflow-hidden">
       {/* Ambient background glow */}
@@ -38,23 +42,27 @@ export default function Footer() {
           </p>
 
           <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <motion.a
-              href="https://cal.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() =>
+                openModal({
+                  title: 'Start Your Project',
+                  subtitle:
+                    'Share your project vision and goals. We will analyze your specifications and be right back with a tailored roadmap.',
+                })
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 sm:py-4 text-[14.5px] sm:text-[15px] font-semibold text-black shadow-xl hover:bg-white/90 transition-colors"
             >
               Start Your Project →
-            </motion.a>
+            </motion.button>
 
-            <a
+            <Link
               href="/work"
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-3.5 sm:py-4 text-[14px] sm:text-[14.5px] font-medium text-white hover:bg-white/20 transition-colors"
             >
               Explore Our Work
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -97,8 +105,8 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-white">Legal & Connect</h4>
             <div className="flex flex-col gap-2.5 text-[13.5px] text-slate-600 dark:text-[#8a8c92]">
-              <a href="https://knownaxis.framer.website/legals/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Privacy Policy</a>
-              <a href="https://knownaxis.framer.website/legals/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Terms of Service</a>
+              <Link href="/privacy-policy" className="hover:text-brand dark:hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-brand dark:hover:text-white transition-colors">Terms of Service</Link>
               <a href="mailto:info@knownaxis.com" className="hover:text-brand dark:hover:text-white transition-colors">info@knownaxis.com</a>
             </div>
           </div>
@@ -111,7 +119,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">LinkedIn</a>
             <a href="https://www.instagram.com/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Instagram</a>
             <a href="https://x.com/KnownAxis" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">X</a>
-            <a href="hhttps://in.pinterest.com/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Pinterest</a>
+            <a href="https://in.pinterest.com/knownaxis/" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-white transition-colors">Pinterest</a>
           </div>
         </div>
       </div>
