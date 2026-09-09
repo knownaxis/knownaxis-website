@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julian Cross — Senior Product Designer, Creative Technologist & Art Director. Crafting high-converting digital products, brand identities, and spatial 3D experiences.">
+  <title>JULIAN CROSS — Senior Product Designer & Creative Director</title>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="index.html" class="brand-logo" aria-label="Julian Cross Portfolio Home">
+        JULIAN CROSS <span class="dot"></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Portfolio</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="stories.html" class="nav-link">Stories</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="contact.html" class="nav-cta-btn">
+        Let's Talk <span>→</span>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="drawer-link">Home</a>
+    <a href="about.html" class="drawer-link">About</a>
+    <a href="services.html" class="drawer-link">Services</a>
+    <a href="work.html" class="drawer-link">Portfolio</a>
+    <a href="testimonials.html" class="drawer-link">Testimonials</a>
+    <a href="stories.html" class="drawer-link">Stories</a>
+    <a href="contact.html" class="drawer-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (LIGHT THEME)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <!-- Giant Condensed Display Headline -->
+        <div class="hero-headline-wrap">
+          <h1 class="hero-giant-title">JULIAN CROSS</h1>
+          
+          <!-- Floating Signature Tilted Portrait Card -->
+          <div class="hero-portrait-stage" id="heroPortraitStage">
+            <div class="hero-portrait-card" id="heroPortraitCard">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85" 
+                alt="Julian Cross portrait" 
+                class="hero-portrait-img"
+              >
+              <div class="hero-badge-tag">
+                <span class="status-dot-pulse"></span>
+                <span>AVAILABLE FOR Q3/Q4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Bottom Grid: Social Proof + Bio & CTA -->
+        <div class="hero-bottom-grid">
+          <!-- Left: Social Proof -->
+          <div class="hero-social-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 1">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 2">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 3">
+            </div>
+            <div class="proof-details">
+              <div class="rating-stars">★★★★★ <span style="color: var(--text-light-primary); font-size: 0.85rem; font-weight: 700;">(4.9 / 5.0)</span></div>
+              <p class="proof-text">Trusted by 140+ tech founders globally</p>
+            </div>
+          </div>
+
+          <!-- Middle empty spacer for portrait overlap -->
+          <div></div>
+
+          <!-- Right: Bio & Call to Action -->
+          <div class="hero-bio-block">
+            <p class="hero-bio-lead">
+              A <strong>Product Designer & Creative Technologist</strong> based in San Francisco, crafting digital experiences that turn into memorable moments.
+            </p>
+            <div class="hero-cta-group">
+              <a href="work.html" class="btn-primary-black">
+                Explore Work <span>↓</span>
+              </a>
+              <a href="contact.html" class="btn-secondary-outline">
+                Book a Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         REVAMPED & ANIMATED ABOUT SECTION (DARK THEME)
+         ========================================================================== -->
+    <section class="about-section dark-section" id="about">
+      <div class="container">
+        <!-- Infinite Brand Marquee -->
+        <div class="brands-marquee-wrap">
+          <div class="marquee-track">
+            <!-- Brand 1: Stripe -->
+            <div class="brand-item">
+              <svg viewBox="0 0 60 25" width="60" height="25"><path d="M59.64 14.28c0-4.57-2.22-8.17-6.49-8.17-4.3 0-6.9 3.6-6.9 8.13 0 5.37 3.12 8.08 7.47 8.08 2.12 0 3.73-.48 4.95-1.16v-3.48c-1.22.6-2.58.96-4.14.96-1.74 0-3.28-.6-3.48-2.67h8.52c.04-.54.07-1.17.07-1.69zm-8.6-1.63c0-1.77 1.08-2.48 2.12-2.48 1.02 0 2.06.71 2.06 2.48h-4.18zm-7.68-6.36c-1.39 0-2.48.65-3.08 1.25V6.47h-4.34v19.78l4.63-.98v-4.94c.63.51 1.57 1.02 2.79 1.02 2.87 0 5.58-2.3 5.58-7.51 0-4.92-2.73-7.55-5.58-7.55zm-1.12 11.23c-.76 0-1.46-.3-1.87-.79v-5.26c.43-.51 1.13-.81 1.87-.81 1.54 0 2.65 1.5 2.65 3.43 0 1.95-1.11 3.43-2.65 3.43zm-10.43-9.9h-4.63v13.67h4.63V7.62zm-2.31-6.19c-1.58 0-2.6 1.02-2.6 2.33 0 1.34 1.02 2.33 2.6 2.33 1.58 0 2.6-1 2.6-2.33 0-1.31-1.02-2.33-2.6-2.33zm-6.19 8.65c-.68-.33-1.63-.6-2.58-.6-1.36 0-2.18.68-2.18 1.63 0 2.51 3.67 2.1 3.67 4.92 0 1.63-1.36 2.72-3.34 2.72-1.36 0-2.82-.57-3.67-1.17v-3.73c.95.54 2.18.9 3.23.9 1.14 0 1.77-.52 1.77-1.34 0-2.42-3.67-1.99-3.67-4.87 0-1.63 1.31-2.72 3.23-2.72 1.25 0 2.5.46 3.51.98v3.28z"/></svg>
+            </div>
+            <!-- Brand 2: Linear -->
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3.1 14.5c.4.6.9 1.2 1.5 1.7L16.2 4.6c-.5-.6-1.1-1.1-1.7-1.5L3.1 14.5zm-1 3.5c.6.8 1.3 1.4 2.2 1.9L20 4.2c-.5-.9-1.2-1.6-2-2.2L2.1 18zm6.5 4.3c.7.4 1.5.6 2.3.7L22.9 11c-.1-.8-.3-1.6-.7-2.3L8.6 22.3zm5.7.7c.8-.1 1.6-.3 2.3-.7L23 15.1c-.4.7-.9 1.4-1.5 1.9L14.3 23z"/></svg>
+              <span>LINEAR</span>
+            </div>
+            <!-- Brand 3: Figma -->
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4zm0-16V0h8v8H8zm8 0V0h-8v8h8zm0 0v8h-4V8h4zm-8 8H4c-2.2 0-4-1.8-4-4s1.8-4 4-4h4v8zm12-4c0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4 4-1.8 4-4z"/></svg>
+              <span>FIGMA</span>
+            </div>
+            <!-- Brand 4: Vercel -->
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
+              <span>VERCEL</span>
+            </div>
+            <!-- Brand 5: OpenAI -->
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M22.28 11.22c-.22-1.92-1.51-3.52-3.32-4.14-.1-.58-.33-1.13-.67-1.62-.97-1.39-2.52-2.24-4.22-2.31-.62-.64-1.42-1.07-2.3-1.22-1.67-.3-3.36.27-4.52 1.49-.61.16-1.19.46-1.68.89-1.38.99-2.18 2.56-2.21 4.26-.64.63-1.07 1.43-1.22 2.31-.3 1.67.27 3.36 1.49 4.52-.16.61-.46 1.19-.89 1.68-.99 1.38-2.56 2.18-4.26 2.21-.63.64-1.07 1.43-1.22 2.31-.3 1.67.27 3.36 1.49 4.52.16.61.46 1.19.89 1.68.99 1.38 2.56 2.18 4.26 2.21.63.64 1.43 1.07 2.31 1.22 1.67.3 3.36-.27 4.52-1.49.61-.16 1.19-.46 1.68-.89 1.38-.99 2.18-2.56 2.21-4.26.64-.63 1.07-1.43 1.22-2.31.3-1.67-.27-3.36-1.49-4.52.16-.61.46-1.19.89-1.68.99-1.38 2.56-2.18 4.26-2.21z"/></svg>
+              <span>OPENAI</span>
+            </div>
+            <!-- Brand 6: Raycast -->
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 0L1.5 10.5 3 12l9-9 9 9 1.5-1.5L12 0zm0 4.5L4.5 12 6 13.5l6-6 6 6 1.5-1.5L12 4.5zM12 9l-4.5 4.5L9 15l3-3 3 3 1.5-1.5L12 9zm0 4.5l-1.5 1.5 1.5 1.5 1.5-1.5-1.5-1.5z"/></svg>
+              <span>RAYCAST</span>
+            </div>
+
+            <!-- Loop duplicates -->
+            <div class="brand-item">
+              <svg viewBox="0 0 60 25" width="60" height="25"><path d="M59.64 14.28c0-4.57-2.22-8.17-6.49-8.17-4.3 0-6.9 3.6-6.9 8.13 0 5.37 3.12 8.08 7.47 8.08 2.12 0 3.73-.48 4.95-1.16v-3.48c-1.22.6-2.58.96-4.14.96-1.74 0-3.28-.6-3.48-2.67h8.52c.04-.54.07-1.17.07-1.69zm-8.6-1.63c0-1.77 1.08-2.48 2.12-2.48 1.02 0 2.06.71 2.06 2.48h-4.18zm-7.68-6.36c-1.39 0-2.48.65-3.08 1.25V6.47h-4.34v19.78l4.63-.98v-4.94c.63.51 1.57 1.02 2.79 1.02 2.87 0 5.58-2.3 5.58-7.51 0-4.92-2.73-7.55-5.58-7.55zm-1.12 11.23c-.76 0-1.46-.3-1.87-.79v-5.26c.43-.51 1.13-.81 1.87-.81 1.54 0 2.65 1.5 2.65 3.43 0 1.95-1.11 3.43-2.65 3.43zm-10.43-9.9h-4.63v13.67h4.63V7.62zm-2.31-6.19c-1.58 0-2.6 1.02-2.6 2.33 0 1.34 1.02 2.33 2.6 2.33 1.58 0 2.6-1 2.6-2.33 0-1.31-1.02-2.33-2.6-2.33zm-6.19 8.65c-.68-.33-1.63-.6-2.58-.6-1.36 0-2.18.68-2.18 1.63 0 2.51 3.67 2.1 3.67 4.92 0 1.63-1.36 2.72-3.34 2.72-1.36 0-2.82-.57-3.67-1.17v-3.73c.95.54 2.18.9 3.23.9 1.14 0 1.77-.52 1.77-1.34 0-2.42-3.67-1.99-3.67-4.87 0-1.63 1.31-2.72 3.23-2.72 1.25 0 2.5.46 3.51.98v3.28z"/></svg>
+            </div>
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3.1 14.5c.4.6.9 1.2 1.5 1.7L16.2 4.6c-.5-.6-1.1-1.1-1.7-1.5L3.1 14.5zm-1 3.5c.6.8 1.3 1.4 2.2 1.9L20 4.2c-.5-.9-1.2-1.6-2-2.2L2.1 18zm6.5 4.3c.7.4 1.5.6 2.3.7L22.9 11c-.1-.8-.3-1.6-.7-2.3L8.6 22.3zm5.7.7c.8-.1 1.6-.3 2.3-.7L23 15.1c-.4.7-.9 1.4-1.5 1.9L14.3 23z"/></svg>
+              <span>LINEAR</span>
+            </div>
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4zm0-16V0h8v8H8zm8 0V0h-8v8h8zm0 0v8h-4V8h4zm-8 8H4c-2.2 0-4-1.8-4-4s1.8-4 4-4h4v8zm12-4c0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4 4-1.8 4-4z"/></svg>
+              <span>FIGMA</span>
+            </div>
+            <div class="brand-item">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
+              <span>VERCEL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revamped Balanced Grid: Snapshot Card on Left + Rich Content on Right -->
+        <div class="about-revamped-grid">
+          <!-- Left Column: Glassmorphism Designer Snapshot Widget -->
+          <div class="about-snapshot-card">
+            <div class="snapshot-header">
+              <div class="snapshot-author">
+                <img 
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=85" 
+                  alt="Julian Cross avatar" 
+                  class="snapshot-avatar"
+                >
+                <div class="snapshot-name-wrap">
+                  <span class="snapshot-name">Julian Cross</span>
+                  <span class="snapshot-handle">@juliancross.design</span>
+                </div>
+              </div>
+              <div class="snapshot-badge">
+                <span class="status-dot-pulse"></span>
+                <span>OPEN</span>
+              </div>
+            </div>
+
+            <!-- Kinetic Audio Waveform -->
+            <div class="snapshot-waveform-wrap">
+              <div class="waveform-meta">
+                <span class="waveform-label">CURRENT LAB FOCUS</span>
+                <span class="waveform-val">Spatial UI & WebGL Systems</span>
+              </div>
+              <div class="waveform-bars" title="Real-time Creative Frequency">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+              </div>
+            </div>
+
+            <!-- Snapshot Meta Items -->
+            <div class="snapshot-meta-list">
+              <div class="snapshot-meta-item">
+                <span class="snapshot-meta-k">Base Location</span>
+                <span class="snapshot-meta-v">San Francisco / Tokyo</span>
+              </div>
+              <div class="snapshot-meta-item">
+                <span class="snapshot-meta-k">Experience</span>
+                <span class="snapshot-meta-v">9+ Years (Staff Level)</span>
+              </div>
+              <div class="snapshot-meta-item">
+                <span class="snapshot-meta-k">Specialty</span>
+                <span class="snapshot-meta-v">Zero-to-One Product Launch</span>
+              </div>
+            </div>
+
+            <!-- Tech Skill Pills -->
+            <div class="snapshot-skills-wrap">
+              <span class="snapshot-skill-pill">Three.js</span>
+              <span class="snapshot-skill-pill">Figma Native</span>
+              <span class="snapshot-skill-pill">Spatial UI</span>
+              <span class="snapshot-skill-pill">Design Tokens</span>
+              <span class="snapshot-skill-pill">Spline 3D</span>
+              <span class="snapshot-skill-pill">Next.js WebGL</span>
+            </div>
+
+            <a href="about.html" class="btn-secondary-outline" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.2); justify-content: center; font-size: 0.85rem; padding: 0.65rem 1rem;">
+              Read Full Backstory & Timeline <span>→</span>
+            </a>
+          </div>
+
+          <!-- Right Column: Editorial Highlight Text & 4 Stat Cards -->
+          <div class="about-body-column">
+            <div class="about-header-tag">
+              Philosophy & Track Record
+            </div>
+
+            <p class="about-highlight-text">
+              I'm <span class="hl-bright">Julian Cross</span>, a passionate <span class="hl-cyan">Product Designer & Art Director</span> with over <span class="hl-bright">9 years and 140+ projects</span> under my belt. My approach blends <span class="hl-lime">deep user research</span> with surgical visual craft, 3D interactive experiences, and robust frontend design that moves culture and drives conversions.
+            </p>
+
+            <!-- 4 Interactive Animated Stat Cards with Progress Meters -->
+            <div class="stats-cards-grid">
+              <!-- Stat Card 1 -->
+              <div class="stat-card" style="--prog: 90%;">
+                <div class="stat-num-row">
+                  <span class="stat-counter-number" data-target="9">0</span>
+                  <span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-card-title">Years Experience</span>
+                <div class="stat-card-progress-track">
+                  <div class="stat-card-progress-bar"></div>
+                </div>
+                <span class="stat-sub-badge">Top 1% Senior IC</span>
+              </div>
+
+              <!-- Stat Card 2 -->
+              <div class="stat-card" style="--prog: 96%;">
+                <div class="stat-num-row">
+                  <span class="stat-counter-number" data-target="140">0</span>
+                  <span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-card-title">Projects Shipped</span>
+                <div class="stat-card-progress-track">
+                  <div class="stat-card-progress-bar"></div>
+                </div>
+                <span class="stat-sub-badge">Startups & Tier-1 Tech</span>
+              </div>
+
+              <!-- Stat Card 3 -->
+              <div class="stat-card" style="--prog: 99%;">
+                <div class="stat-num-row">
+                  <span class="stat-counter-number" data-target="99">0</span>
+                  <span class="stat-suffix">%</span>
+                </div>
+                <span class="stat-card-title">Client Satisfaction</span>
+                <div class="stat-card-progress-track">
+                  <div class="stat-card-progress-bar"></div>
+                </div>
+                <span class="stat-sub-badge">5-Star Verified Reviews</span>
+              </div>
+
+              <!-- Stat Card 4 -->
+              <div class="stat-card" style="--prog: 85%;">
+                <div class="stat-num-row">
+                  <span class="stat-counter-number" data-target="45">0</span>
+                  <span class="stat-suffix">M+</span>
+                </div>
+                <span class="stat-card-title">Client VC Raised</span>
+                <div class="stat-card-progress-track">
+                  <div class="stat-card-progress-bar"></div>
+                </div>
+                <span class="stat-sub-badge">Post-Design Launches</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SECTION (LIGHT THEME)
+         ========================================================================== -->
+    <section class="services-section light-section" id="services">
+      <div class="container">
+        <div class="services-header">
+          <div>
+            <div class="section-subtitle-tag">WHAT I OFFER</div>
+            <h2 class="section-title">SERVICES</h2>
+          </div>
+          <a href="services.html" class="btn-secondary-outline" style="font-size: 0.9rem;">
+            View Detailed Process & Tiers <span>→</span>
+          </a>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <span class="service-idx">/ 01</span>
+              <div class="service-arrow-btn">↗</div>
+            </div>
+            <div class="service-card-bottom">
+              <h3 class="service-title">VISUAL IDENTITY DESIGN</h3>
+              <p class="service-desc">Distinctive, modern brand identities, design systems, typographic scales, and digital guidelines that anchor market leadership.</p>
+              <div class="service-tags">
+                <span class="service-tag">Brand Strategy</span>
+                <span class="service-tag">Logo Systems</span>
+                <span class="service-tag">Design Tokens</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <span class="service-idx">/ 02</span>
+              <div class="service-arrow-btn">↗</div>
+            </div>
+            <div class="service-card-bottom">
+              <h3 class="service-title">PRODUCT & UI/UX DESIGN</h3>
+              <p class="service-desc">Human-centered mobile & web applications engineered for seamless onboarding, delightful engagement, and high retention.</p>
+              <div class="service-tags">
+                <span class="service-tag">Design Systems</span>
+                <span class="service-tag">Rapid Prototyping</span>
+                <span class="service-tag">Figma Native</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <span class="service-idx">/ 03</span>
+              <div class="service-arrow-btn">↗</div>
+            </div>
+            <div class="service-card-bottom">
+              <h3 class="service-title">3D & MOTION GRAPHICS</h3>
+              <p class="service-desc">Bespoke 3D spatial renders, WebGL micro-interactions, and scroll-driven narratives that immerse users and elevate visual prestige.</p>
+              <div class="service-tags">
+                <span class="service-tag">Three.js</span>
+                <span class="service-tag">Spline 3D</span>
+                <span class="service-tag">Cinema 4D</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <span class="service-idx">/ 04</span>
+              <div class="service-arrow-btn">↗</div>
+            </div>
+            <div class="service-card-bottom">
+              <h3 class="service-title">ART DIRECTION</h3>
+              <p class="service-desc">End-to-end creative direction, launch campaigns, and digital art strategy that position breakthrough tech startups on the world stage.</p>
+              <div class="service-tags">
+                <span class="service-tag">Creative Direction</span>
+                <span class="service-tag">Editorial</span>
+                <span class="service-tag">Go-To-Market</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SELECTED WORKS / BENTO GRID (DARK THEME)
+         ========================================================================== -->
+    <section class="works-section dark-section" id="work">
+      <div class="container">
+        <div class="works-header-row">
+          <div>
+            <div class="section-subtitle-tag" style="color: var(--accent-cyan);">PORTFOLIO SHOWCASE</div>
+            <h2 class="section-title">SELECTED WORKS</h2>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="work-filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="branding">Branding</button>
+            <button class="filter-tab" data-filter="product">UI/UX</button>
+            <button class="filter-tab" data-filter="packaging">Packaging</button>
+            <button class="filter-tab" data-filter="print">Print</button>
+          </div>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="bento-works-grid">
+          <!-- Item 1: Wide Left (Green Bottle Mockup) -->
+          <article class="bento-card span-7" data-category="packaging" data-project="kinetix">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PACKAGING</span>
+              <img 
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=80" 
+                alt="Kinetix Hydro sustainable smart water bottle" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Sustainable Hardware • 2025</span>
+                <h3 class="bento-title">Kinetix Hydro — Circular Packaging & Identity</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Item 2: Right Top (Laptop Spatial Studio Mockup) -->
+          <article class="bento-card span-5" data-category="product" data-project="lumio">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">UI/UX & 3D</span>
+              <img 
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80" 
+                alt="Lumio Spatial Studio WebGL Interface" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Spatial Computing • 2025</span>
+                <h3 class="bento-title">Lumio Studio — 3D Spatial Canvas</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Item 3: Bottom Left (Red & White Poster Mockup) -->
+          <article class="bento-card span-4" data-category="print" data-project="apex">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PRINT</span>
+              <img 
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" 
+                alt="Apex Sound Festival typography poster" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Generative Art • 2024</span>
+                <h3 class="bento-title">Apex Sound Festival</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Item 4: Bottom Middle (Dark Luxury Box Packaging) -->
+          <article class="bento-card span-4" data-category="packaging" data-project="aura">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PACKAGING</span>
+              <img 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                alt="Aura Botanicals luxury skincare packaging" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Luxury Skincare • 2024</span>
+                <h3 class="bento-title">Aura Botanicals Labs</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Item 5: Bottom Right (Pastel Fragrance Vessel) -->
+          <article class="bento-card span-4" data-category="branding" data-project="sora">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">3D & BRAND</span>
+              <img 
+                src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80" 
+                alt="Sora Olfactory sculptural perfume bottle" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Art Direction • 2025</span>
+                <h3 class="bento-title">Sora Olfactory Architecture</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center;">
+          <a href="work.html" class="btn-primary-black" style="background-color: #FFFFFF; color: #0A0A0C;">
+            View All Projects & Case Studies <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SECTION (LIGHT THEME)
+         ========================================================================== -->
+    <section class="testimonials-section light-section" id="testimonials">
+      <div class="container">
+        <div class="testimonials-header">
+          <div class="section-subtitle-tag">CLIENT FEEDBACK</div>
+          <h2 class="section-title">TESTIMONIALS</h2>
+        </div>
+
+        <!-- Top Row (2 Cards) -->
+        <div class="testimonials-grid-top">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "Julian elevated our entire platform experience from a standard enterprise utility into a revered, award-winning SaaS product. Our 90-day retention increased by 44% immediately post-redesign."
+            </p>
+            <div class="testimonial-author-block">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Sarah Jenkins" class="testimonial-avatar">
+              <div class="testimonial-author-info">
+                <span class="author-name">SARAH JENKINS</span>
+                <span class="author-role">VP of Product Design, Lumina</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "His rare ability to translate deep business strategy into tactile, emotionally resonant physical and digital branding is world-class. Working with Julian set a new bar for our engineering team."
+            </p>
+            <div class="testimonial-author-block">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Marcus Sterling" class="testimonial-avatar">
+              <div class="testimonial-author-info">
+                <span class="author-name">MARCUS STERLING</span>
+                <span class="author-role">Founder & CEO, Kinetix Hydro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row (3 Cards) -->
+        <div class="testimonials-grid-bottom">
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "Hyper-collaborative, extraordinarily fast, and obsessively attentive to every micro-interaction. Julian is the premier designer we call for high-stakes launches."
+            </p>
+            <div class="testimonial-author-block">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="Arthur Reed" class="testimonial-avatar">
+              <div class="testimonial-author-info">
+                <span class="author-name">ARTHUR REED</span>
+                <span class="author-role">Head of Product, Monolith Labs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "The design system Julian built saved our engineering org hundreds of development hours and maintained pristine aesthetic consistency across our 3 flagship applications."
+            </p>
+            <div class="testimonial-author-block">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" alt="Elena Rostova" class="testimonial-avatar">
+              <div class="testimonial-author-info">
+                <span class="author-name">ELENA ROSTOVA</span>
+                <span class="author-role">Design Director, Apex Sound</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "A master of modern spatial interfaces. His Three.js and WebGL explorations gave our global campaign an unforgettable edge that dominated design galleries."
+            </p>
+            <div class="testimonial-author-block">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80" alt="David Chen" class="testimonial-avatar">
+              <div class="testimonial-author-info">
+                <span class="author-name">DAVID CHEN</span>
+                <span class="author-role">Creative Partner, Horizon Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+          <a href="testimonials.html" class="btn-secondary-outline">
+            Read All Client Case Testimonials <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STORIES & INSIGHTS (DARK THEME)
+         ========================================================================== -->
+    <section class="stories-section dark-section" id="stories">
+      <div class="container">
+        <div class="stories-header">
+          <div class="section-subtitle-tag" style="color: var(--accent-orange);">PUBLICATIONS & THOUGHTS</div>
+          <h2 class="section-title">STORIES</h2>
+        </div>
+
+        <div class="stories-list">
+          <!-- Story 1 -->
+          <article class="story-row" data-story="story-1">
+            <div class="story-thumb-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+                alt="Smartphone high converting landing page mockup" 
+                class="story-thumb-img"
+              >
+            </div>
+            <div class="story-content">
+              <div class="story-meta-line">
+                <span class="story-tag">DESIGN STRATEGY</span>
+                <span>•</span>
+                <span>6 MIN READ</span>
+              </div>
+              <h3 class="story-title">CRAFT A LANDING PAGE THAT PERFORMS GREAT</h3>
+              <p class="story-excerpt">Discover the cognitive frameworks, visual hierarchy rules, and subtle psychological momentum needed to convert first-time visitors into loyal customers.</p>
+              <div class="story-read-link">
+                Read Story <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 2 -->
+          <article class="story-row" data-story="story-2">
+            <div class="story-thumb-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" 
+                alt="Starting and scaling your career in art direction" 
+                class="story-thumb-img"
+              >
+            </div>
+            <div class="story-content">
+              <div class="story-meta-line">
+                <span class="story-tag">CAREER & VISION</span>
+                <span>•</span>
+                <span>8 MIN READ</span>
+              </div>
+              <h3 class="story-title">STARTING AND SCALING YOUR CAREER IN ART DIRECTION</h3>
+              <p class="story-excerpt">Moving from solo pixel production to directing multi-disciplinary design teams: mastering strategic communication and creative leadership.</p>
+              <div class="story-read-link">
+                Read Story <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 3 -->
+          <article class="story-row" data-story="story-3">
+            <div class="story-thumb-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" 
+                alt="Designing for spatial computing" 
+                class="story-thumb-img"
+              >
+            </div>
+            <div class="story-content">
+              <div class="story-meta-line">
+                <span class="story-tag">FUTURE TECH</span>
+                <span>•</span>
+                <span>5 MIN READ</span>
+              </div>
+              <h3 class="story-title">HOW CAN DESIGNERS PREPARE FOR THE ERA OF SPATIAL COMPUTING?</h3>
+              <p class="story-excerpt">Breaking out of the 2D glass screen: volumetric layout paradigms, optical ergonomics, and physics-driven spatial UI models.</p>
+              <div class="story-read-link">
+                Read Story <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center;">
+          <a href="stories.html" class="btn-secondary-outline" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.2);">
+            Browse All Articles & Insights <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT ME SECTION (LIGHT THEME)
+         ========================================================================== -->
+    <section class="contact-section light-section" id="contact">
+      <div class="container">
+        <div class="contact-header">
+          <div class="section-subtitle-tag">GET IN TOUCH</div>
+          <h2 class="section-title">CONTACT ME</h2>
+        </div>
+
+        <div class="contact-split-grid">
+          <!-- Left Info Column -->
+          <div class="contact-info-panel">
+            <p class="contact-lead-text">
+              Have an ambitious vision, upcoming launch, or design challenge? Let’s collaborate to build something remarkable.
+            </p>
+
+            <div class="contact-details-list">
+              <!-- Detail 1: Email -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box">✉</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Direct Inquiries</span>
+                  <div class="contact-detail-val">
+                    <span>julian@cross.design</span>
+                    <button class="copy-btn" id="copyEmailBtn" title="Copy email to clipboard">Copy</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detail 2: Phone -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box">☎</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Phone</span>
+                  <div class="contact-detail-val">+1 (415) 890-3291</div>
+                </div>
+              </div>
+
+              <!-- Detail 3: Location -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box">⚲</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Location</span>
+                  <div class="contact-detail-val">San Francisco, CA / Tokyo</div>
+                </div>
+              </div>
+
+              <!-- Detail 4: Status -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box">●</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Current Availability</span>
+                  <div class="contact-detail-val" style="color: #15803d;">Accepting Q3/Q4 Projects</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-row">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter / X">
+                𝕏
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                in
+              </a>
+              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Dribbble">
+                🏀
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                ⌘
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="contact-form-card">
+            <form id="contactForm" novalidate>
+              <div class="form-row-2col">
+                <div class="form-group">
+                  <label for="formName" class="form-label">Your Name *</label>
+                  <input type="text" id="formName" class="form-input" placeholder="e.g. Alex Morgan" required>
+                </div>
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">Email Address *</label>
+                  <input type="email" id="formEmail" class="form-input" placeholder="alex@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formProject" class="form-label">Service Required</label>
+                <select id="formProject" class="form-select">
+                  <option value="product">Digital Product & UI/UX Design</option>
+                  <option value="branding">Visual Identity & Design Systems</option>
+                  <option value="3d">3D Motion & WebGL Interactive</option>
+                  <option value="all">Full Creative Direction & Launch</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Estimated Budget</label>
+                <input type="hidden" id="selectedBudget" value="$25k - $50k">
+                <div class="budget-options-group">
+                  <div class="budget-chip" data-value="$10k - $25k">$10k - $25k</div>
+                  <div class="budget-chip active" data-value="$25k - $50k">$25k - $50k</div>
+                  <div class="budget-chip" data-value="$50k - $100k">$50k - $100k</div>
+                  <div class="budget-chip" data-value="$100k+">$100k+</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">Project Details *</label>
+                <textarea id="formMessage" class="form-textarea" placeholder="Describe your vision, target timeline, and goals..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-form-submit">
+                Send Inquiry <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SHAPE WHAT'S NEXT & MASSIVE FOOTER (LIGHT THEME)
+         ========================================================================== -->
+    <footer class="footer-cta-section" id="workTogether">
+      <div class="container">
+        <p class="footer-subtitle">HAVE AN AMBITIOUS PROJECT?</p>
+        <a href="contact.html" class="footer-giant-heading" title="Click to initiate contact">
+          SHAPE WHAT'S NEXT
+        </a>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-clock-badge">
+            <span class="status-dot-pulse"></span>
+            <span id="liveClock">SAN FRANCISCO, CA (PDT) — --:--:--</span>
+          </div>
+
+          <div>
+            © 2026 Julian Cross. Crafted with precision & craft.
+          </div>
+
+          <button class="back-to-top-btn" id="backToTopBtn">
+            Back to Top <span>↑</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modals & Toast -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-label="Project Case Study">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="projectModalClose" aria-label="Close modal">✕</button>
+      <div id="projectModalContent"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="storyModal" role="dialog" aria-modal="true" aria-label="Article Reader">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="storyModalClose" aria-label="Close story modal">✕</button>
+      <div id="storyModalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- Script -->
+  <script src="main.js"></script>
+</body>
+</html>

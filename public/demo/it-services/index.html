@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Novaplex Technologies - Next-Gen Enterprise IT Services, Cloud Architecture, DevOps Automation, and Zero-Trust Cybersecurity.">
+  <title>Novaplex Technologies | Enterprise IT Services & Solutions</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Custom Mouse Cursor Follower (Translucent Aura) -->
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- =========================================================================
+       1. Header & Navigation
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Novaplex Home">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span>Nova<span class="brand-accent">plex</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="#hero" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#portfolio" class="nav-item">Portfolio</a>
+        <a href="#pricing" class="nav-item">Pricing</a>
+        <a href="#team" class="nav-item">Team</a>
+        <a href="#blog" class="nav-item">Blog</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn-pill-primary">Get in Touch</a>
+        <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle mobile menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Screenshot-Matched Vibrant Blue Hero Section
+       ========================================================================= -->
+  <section class="hero-wrapper" id="hero">
+    <!-- Wavy Vector Contour Background Overlay -->
+    <div class="hero-wave-lines">
+      <svg viewBox="0 0 1440 650" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-100 450 C 200 350, 400 550, 700 400 C 1000 250, 1200 450, 1600 300" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+        <path d="M-100 480 C 220 380, 420 580, 720 430 C 1020 280, 1220 480, 1600 330" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none"/>
+        <path d="M-100 510 C 240 410, 440 610, 740 460 C 1040 310, 1240 510, 1600 360" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none"/>
+        <circle cx="1200" cy="380" r="180" stroke="rgba(255,255,255,0.09)" stroke-width="1.5" fill="none"/>
+        <circle cx="1200" cy="380" r="260" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="hero-layout">
+        <!-- Left Column: Copy, Checklist, Button & Dual Reviews -->
+        <div class="hero-text-content reveal-left">
+          <!-- Outline Pill Badge -->
+          <div class="hero-screen-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            <span>Everything You Need To Create A Website</span>
+          </div>
+
+          <!-- Bold White Display Title -->
+          <h1 class="hero-screen-title">
+            Business Innovation With<br>IT Services Expertise
+          </h1>
+
+          <!-- 2-Column Checklist -->
+          <div class="hero-checklist-grid">
+            <div class="hero-check-item">
+              <span class="check-icon">✓</span>
+              <span>Deployment and Support</span>
+            </div>
+            <div class="hero-check-item">
+              <span class="check-icon">✓</span>
+              <span>Flexibility and Adaptability</span>
+            </div>
+            <div class="hero-check-item">
+              <span class="check-icon">✓</span>
+              <span>Discovery and Analysis</span>
+            </div>
+            <div class="hero-check-item">
+              <span class="check-icon">✓</span>
+              <span>Competitive Advantage</span>
+            </div>
+          </div>
+
+          <!-- Bright Orange CTA Button -->
+          <div class="hero-btn-wrap">
+            <a href="#pricing" class="btn-screen-orange">
+              <span>GET STARTED</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+          <!-- Dual Review Translucent Glass Card -->
+          <div class="hero-dual-review-card">
+            <!-- Trustpilot Side -->
+            <div class="review-col">
+              <div class="review-brand">
+                <span class="tp-star">★</span>
+                <span>Trustpilot</span>
+              </div>
+              <div class="review-data-row">
+                <div class="avatar-stack">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                </div>
+                <div class="review-rating-block">
+                  <div class="review-stars-gold">★★★</div>
+                  <div class="review-count">450+ reviews</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="review-sep"></div>
+
+            <!-- Google Side -->
+            <div class="review-col">
+              <div class="review-brand">
+                <span class="google-logo">G</span>
+                <span>Google</span>
+              </div>
+              <div class="review-data-row">
+                <div class="avatar-stack">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Client Avatar">
+                </div>
+                <div class="review-rating-block">
+                  <div class="review-stars-gold">★★★</div>
+                  <div class="review-count">450+ reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Friendly Engineer Portrait with Floating Pointer Pills -->
+        <div class="hero-engineer-wrap reveal-right">
+          <!-- Central Cutout Portrait of Friendly Smiling Specialist -->
+          <div class="engineer-photo-container">
+            <img class="engineer-photo" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" alt="Novaplex IT Solutions Specialist" loading="eager">
+          </div>
+
+          <!-- Floating "Solution" Paper-Airplane Pointer Pill (Left Shoulder) -->
+          <div class="hero-badge-pointer badge-solution">
+            <span class="pointer-text">Solation</span>
+            <svg class="pointer-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </div>
+
+          <!-- Floating "Technology" Paper-Airplane Pointer Pill (Right Side) -->
+          <div class="hero-badge-pointer badge-technology">
+            <svg class="pointer-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="2" y1="2" x2="13" y2="13"></line>
+              <polygon points="2 2 9 22 13 13 22 9 2 2"></polygon>
+            </svg>
+            <span class="pointer-text">Technology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. Partner Logos Strip (Infinite Animated Marquee)
+       ========================================================================= -->
+  <section class="partners-bar">
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <span>Google Cloud</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <span>Microsoft Azure</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+          <span>AWS Advanced</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          <span>Cisco Systems</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>CrowdStrike Falcon</span>
+        </div>
+
+        <!-- Set 2 (Seamless loop duplicate) -->
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <span>Google Cloud</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <span>Microsoft Azure</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+          <span>AWS Advanced</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          <span>Cisco Systems</span>
+        </div>
+        <div class="partner-logo-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>CrowdStrike Falcon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Core Capabilities & Architecture
+       ========================================================================= -->
+  <section class="services-feature-section" id="services">
+    <div class="container">
+      <div class="section-header-split reveal">
+        <div>
+          <span class="section-eyebrow">OUR SERVICES</span>
+          <h2 class="section-main-title">Elevating Businesses With IT Ingenuity</h2>
+        </div>
+        <div class="slider-arrow-controls">
+          <button class="slider-arrow-btn" aria-label="Previous">←</button>
+          <button class="slider-arrow-btn active" aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <!-- 4 Harmonized Service Cards (Injected via app.js) -->
+      <div class="services-feature-grid" id="featuresGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. Engineering Excellence & Bento Stats (Vibrant Royal Blue Section)
+       ========================================================================= -->
+  <section class="about-stats-section" id="about">
+    <div class="container">
+      <div class="about-stats-card reveal-scale">
+        <div class="about-stats-grid">
+          <!-- Left: Photo Collage -->
+          <div class="about-photo-collage reveal-left">
+            <img class="photo-main" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Novaplex Tech Team" loading="lazy">
+            <img class="photo-overlay" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Executive Meeting" loading="lazy">
+          </div>
+
+          <!-- Right: Narrative & Stats -->
+          <div class="about-content-wrap reveal-right">
+            <span class="section-eyebrow eyebrow-light">ABOUT OUR COMPANY</span>
+            <h2 class="section-main-title title-light">Navigating Tech Horizons Together</h2>
+            <p class="about-narrative narrative-light">
+              We empower industry leaders to navigate digital transformation with certainty. Our engineering pods operate as an integrated extension of your company, taking full accountability for uptime, compliance, and deployment velocity.
+            </p>
+
+            <div class="about-features-row">
+              <div class="about-feature-box">
+                <div class="about-feat-icon">✓</div>
+                <div class="about-feat-text">Certified Engineers</div>
+              </div>
+              <div class="about-feature-box">
+                <div class="about-feat-icon">✓</div>
+                <div class="about-feat-text">Award Winning Agency</div>
+              </div>
+            </div>
+
+            <!-- Big Stat Counters with Dynamic Count-Up -->
+            <div class="about-counters-row counters-light">
+              <div>
+                <div class="counter-item-val"><span class="counter-num" data-counter="15" data-suffix="+">0</span></div>
+                <div class="counter-item-lbl">Years Experience</div>
+              </div>
+              <div>
+                <div class="counter-item-val"><span class="counter-num" data-counter="650" data-suffix="+">0</span></div>
+                <div class="counter-item-lbl">Projects Completed</div>
+              </div>
+              <div>
+                <div class="counter-item-val"><span class="counter-num" data-counter="99" data-suffix="%">0</span></div>
+                <div class="counter-item-lbl">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. Proven Production Impact & Case Studies
+       ========================================================================= -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <span class="section-eyebrow">OUR PORTFOLIO</span>
+        <h2 class="section-main-title">Check Our Latest Portfolio</h2>
+        <p class="section-subtitle">
+          Explore measurable ROI, latency reductions, and architectural transformations delivered for our enterprise partners.
+        </p>
+      </div>
+
+      <!-- Tab Buttons Navigation -->
+      <div class="portfolio-tabs-nav reveal" id="portfolioTabs">
+        <!-- Rendered by js/app.js -->
+      </div>
+
+      <!-- Active Showcase Panel -->
+      <div class="portfolio-showcase-card reveal-scale" id="portfolioShowcase">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. Video Showcase Banner & 4 Core Pillars Strip
+       ========================================================================= -->
+  <section class="video-pillars-section">
+    <div class="container">
+      <!-- Video Photo Banner -->
+      <div class="video-banner-wrap reveal-scale">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Novaplex Engineering Team" loading="lazy">
+        <div class="video-banner-overlay">
+          <button class="video-play-btn" onclick="document.getElementById('videoPlayBtn').click()" aria-label="Play video overview">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Core Pillars Dark Strip -->
+      <div class="pillars-dark-strip reveal">
+        <div>
+          <h4 class="pillar-col-title">Enterprise Web Systems</h4>
+          <p class="pillar-col-desc">High-velocity enterprise portals, microservices, and progressive apps built on modern React, Node, and TypeScript stacks.</p>
+        </div>
+        <div>
+          <h4 class="pillar-col-title">Zero-Trust Security</h4>
+          <p class="pillar-col-desc">mTLS service meshes, automated SIEM threat hunting, and strict SOC 2 Type II continuous audit enforcement.</p>
+        </div>
+        <div>
+          <h4 class="pillar-col-title">Multi-Cloud Infrastructure</h4>
+          <p class="pillar-col-desc">Multi-region cloud migrations across AWS, Azure, &amp; GCP with Terraform infrastructure-as-code and FinOps cost control.</p>
+        </div>
+        <div>
+          <h4 class="pillar-col-title">Autonomous SRE Ops</h4>
+          <p class="pillar-col-desc">24/7 remote monitoring, fleet MDM with Intune/Jamf, and automated multi-region disaster recovery runbooks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. Enterprise Engagement Models (Pricing Plans)
+       ========================================================================= -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <span class="section-eyebrow">PRICING PLANS</span>
+        <h2 class="section-main-title">Our Awesome Pricing Plans</h2>
+        <p class="section-subtitle">
+          Predictable, SLA-backed technical engagements tailored for cloud scalability, velocity, and zero vendor lock-in.
+        </p>
+      </div>
+
+      <!-- Monthly / Annual Toggle Switch -->
+      <div class="pricing-toggle-wrap reveal">
+        <span class="pricing-toggle-btn active" id="toggleMonthlyLabel">Monthly Retainer</span>
+        <div class="toggle-switch-track" id="pricingToggleTrack" role="switch" aria-checked="false" aria-label="Toggle Annual Billing">
+          <div class="toggle-switch-thumb"></div>
+        </div>
+        <span class="pricing-toggle-btn" id="toggleAnnualLabel">Annual Agreement</span>
+        <span class="pricing-discount-tag">Save 20%</span>
+      </div>
+
+      <!-- Pricing Cards Grid (Rendered via app.js) -->
+      <div class="pricing-cards-grid" id="pricingCardsGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. Skilled Expert Team
+       ========================================================================= -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <span class="section-eyebrow">OUR EXPERTS</span>
+        <h2 class="section-main-title">Meet Our Skilled Expert Team</h2>
+        <p class="section-subtitle">
+          Principal cloud architects, certified Kubernetes pioneers, and cybersecurity researchers dedicated to your production reliability.
+        </p>
+      </div>
+
+      <!-- Team Grid (Rendered via app.js) -->
+      <div class="team-cards-grid" id="teamCardsGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. Zero-Trust Cyber Defense & Threat Governance
+       ========================================================================= -->
+  <section class="security-section">
+    <div class="container">
+      <div class="security-grid">
+        <!-- Left: Photo Collage -->
+        <div class="security-collage-wrap reveal-left">
+          <img class="sec-photo-1" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Security Analysts at work" loading="lazy">
+          <img class="sec-photo-2" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Incident War Room" loading="lazy">
+        </div>
+
+        <!-- Right: Accordion -->
+        <div class="reveal-right">
+          <span class="section-eyebrow">SECURITY &amp; STRATEGY</span>
+          <h2 class="section-main-title">Prioritize Your SBC Strategy And Security</h2>
+          <p class="section-subtitle" style="text-align: left; margin-bottom: 2rem;">
+            From zero-trust network identity and mutual TLS to autonomous threat containment, your architecture meets rigorous global audit standards.
+          </p>
+
+          <div class="accordion-wrap" id="securityAccordion">
+            <!-- Rendered by js/app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. Mid-Page Call-To-Action Banner
+       ========================================================================= -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card reveal-scale">
+        <div class="cta-banner-content">
+          <span class="cta-mini-pill">CONSULTATION</span>
+          <h2>We're Open For Any Suggestion And Consultation</h2>
+        </div>
+        <a href="#contact" class="btn-pill-white">Contact Us Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. Technical Validation & Testimonials
+       ========================================================================= -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <span class="section-eyebrow">TESTIMONIALS</span>
+        <h2 class="section-main-title">Our Latest Client Feedback</h2>
+        <p class="section-subtitle">
+          Measurable outcomes validated by high-growth FinTechs, healthcare innovators, and enterprise logistics networks.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid (Rendered via app.js) -->
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       13. Engineering Dispatches & Architectural Briefings
+       ========================================================================= -->
+  <section class="news-section" id="blog">
+    <div class="container">
+      <div class="section-header-split reveal">
+        <div>
+          <span class="section-eyebrow">OUR BLOG</span>
+          <h2 class="section-main-title">Featured News And Insights</h2>
+        </div>
+        <div class="slider-arrow-controls">
+          <button class="slider-arrow-btn" aria-label="Previous">←</button>
+          <button class="slider-arrow-btn active" aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <!-- News Cards Grid (Rendered via app.js) -->
+      <div class="news-cards-grid" id="newsCardsGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       14. Pre-Footer "Talk With Us" Banner
+       ========================================================================= -->
+  <section class="pre-footer-section" id="contact">
+    <div class="container">
+      <div class="pre-footer-card reveal-scale">
+        <img class="pre-footer-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Consultant portrait" loading="lazy">
+        <div>
+          <div class="pre-footer-title">Need Specialized IT Consultation? Talk With Us Today</div>
+          <p style="color: #c7d2fe; font-size: 0.95rem; margin-top: 0.35rem;">
+            Direct access to senior solutions architects with zero sales middlemen.
+          </p>
+        </div>
+        <a href="mailto:enterprise@novaplextech.com" class="btn-pill-orange" style="white-space: nowrap;">
+          Schedule Free Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       15. Midnight Navy Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Info -->
+        <div>
+          <div class="brand-logo footer-brand-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            </svg>
+            <span>Nova<span class="brand-accent">plex</span></span>
+          </div>
+          <p class="footer-desc">
+            Next-generation enterprise IT solutions, cloud architecture, and zero-trust cybersecurity engineered for modern velocity.
+          </p>
+          <div style="font-size: 0.875rem; color: #94a3b8; display: flex; flex-direction: column; gap: 0.4rem;">
+            <div>📍 100 Montgomery St, San Francisco, CA</div>
+            <div>📞 +1 (800) 492-NOVAPLEX</div>
+            <div>✉️ enterprise@novaplextech.com</div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-head">Quick Links</h4>
+          <div class="footer-links-list">
+            <a href="#about">Engineering Excellence</a>
+            <a href="#services">Core Capabilities</a>
+            <a href="#portfolio">Proven Case Studies</a>
+            <a href="#pricing">Enterprise Engagement</a>
+            <a href="#team">Principal Leadership</a>
+          </div>
+        </div>
+
+        <!-- Col 3: IT Capabilities -->
+        <div>
+          <h4 class="footer-col-head">IT Capabilities</h4>
+          <div class="footer-links-list">
+            <a href="#services">Multi-Cloud Migration</a>
+            <a href="#services">Zero-Trust Cyber Defense</a>
+            <a href="#services">Kubernetes &amp; DevOps</a>
+            <a href="#services">Enterprise AI &amp; Lakehouse</a>
+            <a href="#services">24/7 Managed IT Helpdesk</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <h4 class="footer-col-head">Tech Newsletter</h4>
+          <p style="font-size: 0.875rem; color: #94a3b8; line-height: 1.5;">
+            Join 12,000+ engineering leaders receiving our weekly multi-cloud architecture briefings.
+          </p>
+          <form class="footer-newsletter-form" id="footerNewsletterForm">
+            <input type="email" class="footer-input" placeholder="Enter corporate email..." required>
+            <button type="submit" class="btn-pill-primary" style="padding: 0.65rem 1.15rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Strip -->
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Novaplex Technologies Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: #94a3b8;">Security Whitepaper</a>
+          <a href="#" style="color: #94a3b8;">SOC 2 Report</a>
+          <a href="#" style="color: #94a3b8;">Privacy Policy</a>
+          <a href="#" style="color: #94a3b8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script src="js/services-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@ export interface ProjectItem {
   id: string;
   title: string;
   client: string;
-  category: 'SaaS & AI' | 'Real Estate & FinTech' | 'E-Commerce & 3D';
+  category: 'SaaS & AI' | 'Real Estate & FinTech' | 'E-Commerce & 3D' | 'IT Services & Cloud';
   tag: string;
   description: string;
   metrics: { label: string; value: string }[];
@@ -64,61 +64,61 @@ const PROJECTS: ProjectItem[] = [
     browserUrl: 'urbanisty-demo.knownaxis.com',
   },
   {
-    id: 'quantum-pay',
-    title: 'QuantumPay Global FinTech & Digital Brand',
-    client: 'QuantumPay Infrastructure',
-    category: 'Real Estate & FinTech',
-    tag: 'FINTECH · DESIGN SYSTEM · 3D',
-    description:
-      'Full brand design system, interactive 3D WebGL card customizer, and banking-grade marketing platform commanding enterprise institutional trust.',
-    metrics: [
-      { label: 'Conversion Increase', value: '+185%' },
-      { label: 'LCP Core Web Vital', value: '0.42s' },
-      { label: 'Security Score', value: 'A+' },
-    ],
-    tags: ['WebGL Shaders', 'Tailwind CSS', 'Figma Tokens', 'Stripe Architecture'],
-    demoUrl: 'https://knownaxis.framer.website',
-    caseStudyUrl: 'https://knownaxis.framer.website',
-    previewGradient: 'from-cyan-600/30 via-blue-600/20 to-indigo-700/20',
-    browserUrl: 'quantumpay.demo.knownaxis.com',
-  },
-  {
-    id: 'luxe-atelier',
-    title: 'LuxeAtelier Interactive 3D Commerce',
-    client: 'Luxe Studio Co.',
+    id: 'nova',
+    title: 'Nova: Living AI Brand Mascot Platform',
+    client: 'Nova Living Agent',
     category: 'E-Commerce & 3D',
-    tag: '3D COMMERCE · WEBGL · MOTION',
+    tag: 'AI MASCOTS · WEBGL · REAL-TIME 3D',
     description:
-      'Immersive luxury e-commerce experience featuring 360-degree interactive 3D product previews, fluid micro-transitions, and sub-second checkout speeds.',
+      'Interactive 3D AI mascot platform with 8 distinct living personas, real-time emotional state simulation, spatial gaze kinematics, and one-script-tag deployment for instant brand embodiment.',
     metrics: [
-      { label: 'Cart Conversion', value: '+44%' },
-      { label: 'Engagement Rate', value: '6.5 min' },
-      { label: 'Return Rate', value: '-32%' },
+      { label: 'Visitor Dwell Time', value: '+340%' },
+      { label: 'Checkout Conversion', value: '+48%' },
+      { label: 'Rendering Performance', value: '120 FPS' },
     ],
-    tags: ['Three.js Canvas', 'Shopify Storefront API', 'Framer Motion', 'Tailwind'],
-    demoUrl: 'https://knownaxis.framer.website',
-    caseStudyUrl: 'https://knownaxis.framer.website',
-    previewGradient: 'from-emerald-600/30 via-teal-600/20 to-cyan-500/20',
-    browserUrl: 'luxeatelier.demo.knownaxis.com',
+    tags: ['Three.js', 'WebGL Shaders', 'Real-Time Vector Sync', 'Spatial Gaze AI'],
+    demoUrl: 'https://nova.demo.knownaxis.com',
+    caseStudyUrl: 'https://nova.demo.knownaxis.com',
+    previewGradient: 'from-red-700/30 via-rose-600/20 to-black/40',
+    browserUrl: 'nova.demo.knownaxis.com',
   },
   {
-    id: 'synth-ai',
-    title: 'Synthetix Autonomous Developer Platform',
-    client: 'Synthetix Labs',
-    category: 'SaaS & AI',
-    tag: 'DEV TOOLS · SAAS · AI',
+    id: 'novaplex',
+    title: 'Novaplex IT Services & Enterprise Solutions',
+    client: 'Novaplex',
+    category: 'IT Services & Cloud',
+    tag: 'CLOUD · DEVOPS · CYBERSECURITY',
     description:
-      'Developer tool marketing platform with live interactive code sandbox, dark/light theme playground, and documentation hub built for high developer adoption.',
+      'Enterprise IT services platform showcasing cloud & DevOps solutions, zero-trust cyber defense, AI engineering, and 24/7 managed SRE with a conversion-focused portfolio and pricing engine.',
     metrics: [
-      { label: 'Signup Velocity', value: '+240%' },
-      { label: 'Time to First API Call', value: '2.1 min' },
-      { label: 'Organic Search', value: 'Top 3' },
+      { label: 'Query Speedup', value: '10x Faster' },
+      { label: 'Data Processed / Day', value: '4.5 TB' },
+      { label: 'OpEx Cost Savings', value: '38%' },
     ],
-    tags: ['Next.js 14', 'MDX Docs', 'TypeScript', 'AI LLM API'],
-    demoUrl: 'https://knownaxis.framer.website',
-    caseStudyUrl: 'https://knownaxis.framer.website',
-    previewGradient: 'from-violet-600/30 via-purple-600/20 to-pink-500/20',
-    browserUrl: 'synthetix-ai.demo.knownaxis.com',
+    tags: ['Cloud & DevOps', 'Zero-Trust Security', 'AI/LLM Engineering', 'Managed SRE'],
+    demoUrl: '/demo/it-services/index.html',
+    caseStudyUrl: '/demo/it-services/index.html',
+    previewGradient: 'from-blue-600/30 via-indigo-600/20 to-orange-500/10',
+    browserUrl: 'novaplex.demo.knownaxis.com',
+  },
+  {
+    id: 'julian-cross',
+    title: 'Julian Cross — Product Designer Portfolio',
+    client: 'Julian Cross',
+    category: 'E-Commerce & 3D',
+    tag: 'PORTFOLIO · 3D WEBGL · BRANDING',
+    description:
+      'Personal portfolio and brand platform for a product designer & art director, featuring 3D interactive spatial canvas work, motion-driven case studies, and a conversion-focused inquiry funnel.',
+    metrics: [
+      { label: 'Client Success Rate', value: '99%' },
+      { label: 'Projects Shipped', value: '140+' },
+      { label: 'Client Reach', value: '45M+' },
+    ],
+    tags: ['Three.js', 'WebGL Canvas', 'Framer Motion', 'Design Systems'],
+    demoUrl: '/demo/portfolio/index.html',
+    caseStudyUrl: '/demo/portfolio/index.html',
+    previewGradient: 'from-lime-500/30 via-green-600/20 to-black/30',
+    browserUrl: 'juliancross.demo.knownaxis.com',
   },
 ];
 

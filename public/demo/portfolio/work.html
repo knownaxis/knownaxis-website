@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio & Selected Works — Julian Cross. Digital products, brand systems, 3D WebGL, and industrial packaging.">
+  <title>PORTFOLIO — JULIAN CROSS</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="index.html" class="brand-logo" aria-label="Julian Cross Portfolio Home">
+        JULIAN CROSS <span class="dot"></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link active">Portfolio</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="stories.html" class="nav-link">Stories</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="contact.html" class="nav-cta-btn">
+        Let's Talk <span>→</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="drawer-link">Home</a>
+    <a href="about.html" class="drawer-link">About</a>
+    <a href="services.html" class="drawer-link">Services</a>
+    <a href="work.html" class="drawer-link">Portfolio</a>
+    <a href="testimonials.html" class="drawer-link">Testimonials</a>
+    <a href="stories.html" class="drawer-link">Stories</a>
+    <a href="contact.html" class="drawer-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Home</a> <span>/</span> <span>Portfolio</span>
+        </nav>
+        <h1 class="page-hero-title">SELECTED ARCHIVES</h1>
+        <p class="page-hero-lead">
+          A curated exhibition of digital products, spatial 3D canvas ecosystems, and brutalist physical packaging systems engineered for global impact.
+        </p>
+      </div>
+    </section>
+
+    <!-- Work Gallery Section (Dark Theme) -->
+    <section class="dark-section" style="min-height: 80vh;">
+      <div class="container">
+        <!-- Controls: Search & Filters -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3.5rem;">
+          <div class="work-filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Projects</button>
+            <button class="filter-tab" data-filter="branding">Branding</button>
+            <button class="filter-tab" data-filter="product">UI/UX & 3D</button>
+            <button class="filter-tab" data-filter="packaging">Packaging</button>
+            <button class="filter-tab" data-filter="print">Print</button>
+          </div>
+
+          <!-- Real-Time Search -->
+          <div style="position: relative; width: 100%; max-width: 320px;">
+            <input 
+              type="text" 
+              id="projectSearchInput" 
+              placeholder="Search projects or tools..." 
+              style="width: 100%; padding: 0.65rem 1.2rem; background-color: var(--bg-dark-card); border: 1px solid var(--border-dark); border-radius: var(--border-radius-pill); color: #FFFFFF; font-size: 0.88rem; outline: none;"
+            >
+          </div>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="bento-works-grid">
+          <!-- Project 1 -->
+          <article class="bento-card span-7" data-category="packaging" data-project="kinetix">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PACKAGING</span>
+              <img 
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=80" 
+                alt="Kinetix Hydro" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Sustainable Hardware • 2025</span>
+                <h3 class="bento-title">Kinetix Hydro — Circular Packaging & Identity</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="bento-card span-5" data-category="product" data-project="lumio">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">UI/UX & 3D</span>
+              <img 
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80" 
+                alt="Lumio Spatial Studio" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Spatial Computing • 2025</span>
+                <h3 class="bento-title">Lumio Studio — 3D Spatial Canvas</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="bento-card span-4" data-category="print" data-project="apex">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PRINT</span>
+              <img 
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" 
+                alt="Apex Sound Festival" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Generative Art • 2024</span>
+                <h3 class="bento-title">Apex Sound Festival</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="bento-card span-4" data-category="packaging" data-project="aura">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">PACKAGING</span>
+              <img 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                alt="Aura Botanicals" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Luxury Skincare • 2024</span>
+                <h3 class="bento-title">Aura Botanicals Labs</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="bento-card span-4" data-category="branding" data-project="sora">
+            <div class="bento-img-container">
+              <span class="bento-card-badge">3D & BRAND</span>
+              <img 
+                src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80" 
+                alt="Sora Olfactory" 
+                class="bento-img"
+              >
+            </div>
+            <div class="bento-content">
+              <div class="bento-info">
+                <span class="bento-category">Art Direction • 2025</span>
+                <h3 class="bento-title">Sora Olfactory Architecture</h3>
+              </div>
+              <div class="bento-action-circle">↗</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-cta-section" id="workTogether">
+      <div class="container">
+        <p class="footer-subtitle">HAVE AN AMBITIOUS PROJECT?</p>
+        <a href="contact.html" class="footer-giant-heading" title="Click to initiate contact">
+          SHAPE WHAT'S NEXT
+        </a>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-clock-badge">
+            <span class="status-dot-pulse"></span>
+            <span id="liveClock">SAN FRANCISCO, CA (PDT) — --:--:--</span>
+          </div>
+
+          <div>
+            © 2026 Julian Cross. Crafted with precision & craft.
+          </div>
+
+          <button class="back-to-top-btn" id="backToTopBtn">
+            Back to Top <span>↑</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Project Case Study Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-label="Project Case Study">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="projectModalClose" aria-label="Close modal">✕</button>
+      <div id="projectModalContent"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

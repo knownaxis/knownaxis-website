@@ -20,21 +20,21 @@ const cases = [
   color: 'from-slate-900/30 to-indigo-950/20',
 },
   {
-    name: 'Clearpath SaaS',
-    client: 'B2B Enterprise Workflow Solutions',
-    tag: 'AI WORKFLOWS · AUTOMATION · CRM',
-    badge: 'SAAS AUTOMATION',
+    name: 'Nova: Living AI Brand Mascot',
+    client: 'Nova Living Agent',
+    tag: 'AI MASCOTS · WEBGL · REAL-TIME 3D',
+    badge: 'E-COMMERCE & 3D',
     stats: [
-      { label: 'Hours Saved / Wk', value: '28 hrs' },
-      { label: 'Lead Triage SLA', value: '< 90 sec' },
-      { label: 'Qualified Pipeline', value: '3.4x' },
+      { label: 'Visitor Dwell Time', value: '+340%' },
+      { label: 'Checkout Conversion', value: '+48%' },
+      { label: 'Rendering Performance', value: '120 FPS' },
     ],
     challenge:
-      'Account executives and SDRs were losing 3 hours daily manually scoring inbound form submissions, copying data across spreadsheets, and misrouting enterprise leads.',
+      'Brands struggle to create memorable digital experiences with static websites that fail to build emotional connection or stand out from generic templated storefronts.',
     built:
-      'Deployed an autonomous AI qualification agent that instantly enriches lead company data, computes propensity scores, and schedules calls with the right rep.',
-    href: 'https://knownaxis.framer.website/case-studies/saas-lead-qualification',
-    color: 'from-indigo-500/20 to-purple-500/10',
+      'Engineered an interactive 3D AI mascot platform with 8 distinct living personas, real-time emotional state simulation, and one-script-tag deployment for instant brand embodiment.',
+    href: 'https://nova.demo.knownaxis.com',
+    color: 'from-red-700/20 to-rose-600/10',
   },
 ];
 
