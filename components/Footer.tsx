@@ -69,8 +69,11 @@ export default function Footer() {
         {/* Footer Navigation Columns */}
         <div className="grid gap-10 border-b border-slate-200 dark:border-line/50 pb-12 sm:pb-16 grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-1">
-            <div className="mb-4 flex items-center text-slate-900 dark:text-white">
-              <KnownaxisLogo className="h-6 sm:h-7 w-auto" />
+            <div className="mb-4 flex items-center gap-2.5 text-slate-900 dark:text-white">
+              <KnownaxisLogo className="h-6 sm:h-7 w-auto shrink-0" />
+              <span className="flex h-4 self-center items-center border-l border-slate-300 dark:border-white/15 pl-2.5 text-[11px] sm:text-xs font-medium leading-none text-slate-500 dark:text-grey/70 translate-y-[3px] sm:translate-y-[4px]">
+                by Vizbix
+              </span>
             </div>
             <p className="max-w-sm text-[13px] sm:text-[13.5px] leading-relaxed text-slate-600 dark:text-[#8a8c92]">
               Architecting memorable digital brands, interactive 3D web applications, and autonomous AI systems that save 25+ hours weekly and scale business output.
