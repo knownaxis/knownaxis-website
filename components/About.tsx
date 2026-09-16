@@ -52,14 +52,16 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-3 inline-block rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
-            ABOUT KNOWNAXIS
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-1 text-xs font-semibold tracking-widest text-brand">
+            <span>ABOUT KNOWNAXIS</span>
+            <span className="h-3 w-px bg-brand/30" />
+            <span className="font-medium normal-case tracking-normal text-brand/70">by Vizbix</span>
           </span>
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
             We architect memorable digital identities and autonomous AI systems that drive real growth.
           </h2>
           <p className="mt-4 text-[15px] sm:text-[16.5px] leading-relaxed text-slate-600 dark:text-grey">
-            Knownaxis was founded to bridge the gap between creative visual artistry and rigorous full-stack software engineering. We partner with forward-thinking businesses to transform how customers discover, remember, and convert on their websites.
+            Knownaxis, by Vizbix, was founded to bridge the gap between creative visual artistry and rigorous full-stack software engineering. We partner with forward-thinking businesses to transform how customers discover, remember, and convert on their websites.
           </p>
         </div>
 
